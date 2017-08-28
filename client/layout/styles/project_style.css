@@ -1,0 +1,39 @@
+.cover_photo {
+	height: 150px;
+	background-image: url(http://res.cloudinary.com/masarchitect/image/upload/v1503404748/cong-trinhs/hinhDaiDien/jnitllytsjiezfbeibvg.jpg);
+	background-size: cover;
+	background-position: 50% 25%;
+
+}
+
+.cover_board {
+	width: inherit;
+	margin-bottom: 10px;
+}
+
+.title {
+	margin: 0 0 6px 0;
+	padding: 0;
+	font-size: 30px;
+	line-height: 1.5em;
+	font-weight: 500;
+}
+
+.date {
+	color: #b2b2b2;
+    font-size: 12px;
+    line-height: 1em;
+    margin-bottom: 12px;
+}
+
+.description {
+	color: #1d2129;
+	font-size: 14px;
+	line-height: 1.5em;
+	margin-bottom: 12px;
+}
+
+.grid_container {
+	display: flex;
+	justify-content: center;
+}
