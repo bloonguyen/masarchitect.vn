@@ -64,17 +64,20 @@ export default class ProjectCategory extends React.Component {
 	render() {
 		console.log('categories: ',this.state.categories);
 		var nodeList = (!this.state.categories.length)? null : this.state.categories.map(item => {
+			console.log('navBarItem: ',item,this.props.locale);
+			var label = (this.props.locale == 'vi')? item.name : item.tiengAnh;
 			return (
 				<NavBarItem route={'/project_category/'+item.key}>
-					{item.name}
+					{label}
 				</NavBarItem>
 			);
 		});
+		var allText = (this.props.locale == 'vi')? 'Tất cả': 'All Projects'
 		return (
-			<MainLayout>
+			<MainLayout locale={this.props.locale}>
 				<NavBar>
 					<NavBarItem route={'/project_category/'}>
-						Tất cả
+						{allText}
 					</NavBarItem>
 					{nodeList}
 				</NavBar>

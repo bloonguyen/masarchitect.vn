@@ -1,10 +1,8 @@
 var keystone = require('keystone');
 
 keystone.init({
-
 	'name': 'masArchitecture',
 	'brand': 'masArchitecture',
-
 	'less': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
@@ -53,7 +51,8 @@ keystone.set('routes', require('./routes'));
 keystone.set('nav', {
 	'users': 'users',
 	'posts': 'posts',
-	'congTrinh': ['congTrinh','loaiCongTrinh']
+	'congTrinh': ['congTrinh','loaiCongTrinh'],
+	'nhanSu': 'nhanSu'
 });
 
 

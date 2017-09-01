@@ -36,7 +36,7 @@ export default class ProjectPage extends React.Component {
 	}
 	render() {
 		return(
-			<MainLayout>
+			<MainLayout locale={this.props.locale}>
 				<ProjectUnit data={this.state.project[0]} />
 			</MainLayout>
 		)

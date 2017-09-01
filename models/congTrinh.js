@@ -13,7 +13,7 @@ var congTrinh = new keystone.List('congTrinh', {
 congTrinh.add({
 	name: { type: String, required: true },
 	theLoai: {type: Types.Relationship, ref: 'loaiCongTrinh', many: true},
-	giaiThichTiengAnh: { type: Types.Text},
+	giaiThichTiengAnh: { type: Types.Textarea},
 	giaiThichTiengViet: { type: Types.Textarea},
 	ngayHoanThanh: { type: Types.Date, default: Date.now },
 	hinhDaiDien: { type: Types.CloudinaryImage },

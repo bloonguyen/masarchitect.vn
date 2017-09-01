@@ -1,23 +1,16 @@
-.project_item {
-	width: 45vw;
-    height: 27vw;
-    margin: 3px;
-    flex: 1;
-	position: relative;
-	background-size: cover;
-}
+
 
 .grid_wrapper {
 	display: flex;
 	justify-content: center;
-	padding: 10px;
 }
 
 .grid {
 	padding: 0;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-evenly;
+	width: 100%;
 }
 
 .project_title {
@@ -30,12 +23,22 @@
 }
 
 .item_container {
+	width: 45vw;
 	list-style: none;
 	margin-bottom: 10px;
 }
 
 .item_container > a {
 	text-decoration: none;
+}
+
+.project_item {
+	width: 45vw;
+    height: 27vw;
+    margin: 3px;
+    flex: 1;
+	position: relative;
+	background-size: cover;
 }
 
 .project_item::after {
@@ -47,4 +50,31 @@
 	width: 100%;
 	height: 100%;
 	content: '';
+}
+
+.profile_item {
+	width: 45vw;
+    height: 45vw;
+    flex: 1;
+	position: relative;
+	background-size: cover;
+	filter: grayscale(.7);
+}
+
+.profile_item:hover {
+	filter: grayscale(0);
+}
+
+.profile_title {
+   width: 45vw;
+   text-transform: uppercase;
+   font-weight: 600;
+   text-decoration: none;
+   color: #212121;
+
+}
+
+.profile_description {
+	font-size: 13px;
+	font-weight: 300;
 }

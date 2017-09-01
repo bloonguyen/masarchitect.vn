@@ -50,6 +50,7 @@
 	list-style: none;
 	height: 100%;
 	margin-bottom: 4px;
+	text-transform: uppercase;
 }
 
 .nav_item a {

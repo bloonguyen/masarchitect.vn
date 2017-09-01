@@ -31,8 +31,34 @@ export default class ItemGrid extends React.Component {
 					)
 				})
 				return nodeList;
-			default:
 
+			case "profile":
+				nodeList = this.props.data.map((item,index) => {
+					var url = (item.anhDaiDien)? item.anhDaiDien.url:null;
+					if (this.props.locale =="vi") {
+						var name = item.name;
+						var description = item.giaiThichTiengViet;
+					}
+					else {
+						var name = item.englishName;
+						var description = item.giaiThichTiengAnh;
+					}
+					return (
+						<li className={styles.item_container}
+							key={index}>
+								<div className={styles.profile_item}
+									style={{backgroundImage:'url('+url+')'}}>
+								</div>
+								<div className={styles.profile_title}>
+									{name}
+								</div>
+								<div className={styles.profile_description}>{description}</div>
+						</li>
+					)
+				})
+				return nodeList;
+
+			default:
 		}
 	}
 	render() {
