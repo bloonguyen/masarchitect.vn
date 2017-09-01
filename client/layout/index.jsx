@@ -37,8 +37,8 @@ export class CoverMenu extends React.Component {
 				<div className={styles.item_container}>
 					<CoverMenuItem url={'/project_category'}>Công trình</CoverMenuItem>
 					<CoverMenuItem url={'/blog'}>Tin tức</CoverMenuItem>
-					<CoverMenuItem>Giới thiệu</CoverMenuItem>
-					<CoverMenuItem>Liên hệ</CoverMenuItem>
+					<CoverMenuItem url={'/about'}>Giới thiệu</CoverMenuItem>
+					<CoverMenuItem url={'/contact'}>Liên hệ</CoverMenuItem>
 				</div>
 				<img className={styles.cover_logo} src="/images/logo/transparent_lightgrey.png" />
 			</div>
