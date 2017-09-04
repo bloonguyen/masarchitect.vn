@@ -49,7 +49,7 @@ export default class MainLayout extends React.Component {
 	render() {
 		return (
 			<div className={globalStyles.main_container}>
-				<div>
+				<div className={styles.semi_container}>
 					<HeaderBar lang={this.state.lang} />
 					<div className={styles.main_content_body}>{this.props.children}</div>
 				</div>

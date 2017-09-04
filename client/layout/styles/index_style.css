@@ -114,6 +114,6 @@
 }
 @media only screen and (max-width: 1000px) {
 	.menu_item {
-		width: 250px;
+		/*width: 250px;*/
 	}
 }

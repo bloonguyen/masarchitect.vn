@@ -10,6 +10,14 @@
 	transition: height .15s ease-out;
 }
 
+.semi_container{
+	height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .header_logo {
 	height: 50px;
 	margin-left: 20px;
@@ -70,6 +78,9 @@
 }
 
 .main_content_body {
+	height: 100%;
+    position: relative;
+    flex: 1;
 	font-family: 'Helvetica Neue', sans-serif;
 }
 

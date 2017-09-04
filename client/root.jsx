@@ -23,7 +23,7 @@ class App extends React.Component {
     render() {
         return (
             <Router history={browserHistory}>
-            
+
                 <Route path="/" component={(props) => <IndexPage
                     locale={this.state.locale}
                     switchLang={this.switchLang.bind(this)} {...props}/>}/>
