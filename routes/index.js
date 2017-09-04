@@ -31,6 +31,7 @@ exports = module.exports = function(app) {
 	// Views
 	app.get('/', routes.views.index);
 	app.get('/blog', routes.views.blog);
+	app.get('/post/:key',routes.views.blog);
 	app.get('/project/:name', routes.views.blog);
 	app.get('/project_category/:name', routes.views.blog);
 	app.get('/project_category/', routes.views.blog);
@@ -43,7 +44,8 @@ exports = module.exports = function(app) {
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 
 	//api
-	app.use('/api/post',routes.api.post);
+	app.use('/api/blog',routes.api.post);
+	app.use('/api/post/:key',routes.api.onePost);
 	app.get('/api/project_category/:name',routes.api.projectCategory);
 	app.get('/api/project_category',routes.api.projectCategory);
 	app.get('/api/project/:name',routes.api.project);

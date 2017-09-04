@@ -8,6 +8,7 @@ import ProjectPage from 'client/layout/project.jsx';
 import ProjectCategory from 'client/layout/projectCategory.jsx';
 import AboutPage from 'client/layout/about.jsx';
 import ContactPage from 'client/layout/contact.jsx'
+import PostPage from 'client/layout/post.jsx';
 
 class App extends React.Component {
     constructor(props) {
@@ -23,12 +24,16 @@ class App extends React.Component {
     render() {
         return (
             <Router history={browserHistory}>
-            
+
                 <Route path="/" component={(props) => <IndexPage
                     locale={this.state.locale}
                     switchLang={this.switchLang.bind(this)} {...props}/>}/>
 
                 <Route path="/blog" component={(props) => <BlogPage
+                    locale={this.state.locale}
+                    switchLang={this.switchLang.bind(this)} {...props}/>}/>
+
+                <Route path="/post/:key" component={(props) => <PostPage
                     locale={this.state.locale}
                     switchLang={this.switchLang.bind(this)} {...props}/>}/>
 
