@@ -141,10 +141,10 @@ export class HeaderBarItems extends React.Component {
 		}
 		return(
 			<ul className={container}>
-				<li className={styles.nav_item}><Link to="/">{this.props.lang.about}</Link></li>
-				<li className={styles.nav_item}><Link to="/">{this.props.lang.project}</Link></li>
+				<li className={styles.nav_item}><Link to="/about">{this.props.lang.about}</Link></li>
+				<li className={styles.nav_item}><Link to="/project_category">{this.props.lang.project}</Link></li>
 				<li className={styles.nav_item}><Link to="/blog">{this.props.lang.news}</Link></li>
-				<li className={styles.nav_item}><Link to="/">{this.props.lang.contact}</Link></li>
+				<li className={styles.nav_item}><Link to="/contact">{this.props.lang.contact}</Link></li>
 			</ul>
 		)
 	}

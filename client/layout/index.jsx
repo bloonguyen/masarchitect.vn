@@ -120,8 +120,8 @@ export class CoverMenu extends React.Component {
 				<div className={styles.item_container}>
 					<CoverMenuItem url={'/project_category'}>{this.props.lang.project}</CoverMenuItem>
 					<CoverMenuItem url={'/blog'}>{this.props.lang.news}</CoverMenuItem>
-					<CoverMenuItem>{this.props.lang.about}</CoverMenuItem>
-					<CoverMenuItem>{this.props.lang.contact}</CoverMenuItem>
+					<CoverMenuItem url={'/about'}>{this.props.lang.about}</CoverMenuItem>
+					<CoverMenuItem url={'/contact'}>{this.props.lang.contact}</CoverMenuItem>
 				</div>
 				<img className={styles.cover_logo} src="/images/logo/transparent_lightgrey.png" />
 			</div>

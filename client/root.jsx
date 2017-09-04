@@ -6,7 +6,8 @@ import IndexPage from 'client/layout/index.jsx';
 import BlogPage from 'client/layout/blog.jsx';
 import ProjectPage from 'client/layout/project.jsx';
 import ProjectCategory from 'client/layout/projectCategory.jsx';
-import OurTeam from 'client/layout/ourTeam.jsx';
+import AboutPage from 'client/layout/about.jsx';
+import ContactPage from 'client/layout/contact.jsx'
 
 class App extends React.Component {
     constructor(props) {
@@ -22,6 +23,7 @@ class App extends React.Component {
     render() {
         return (
             <Router history={browserHistory}>
+            
                 <Route path="/" component={(props) => <IndexPage
                     locale={this.state.locale}
                     switchLang={this.switchLang.bind(this)} {...props}/>}/>
@@ -42,7 +44,15 @@ class App extends React.Component {
                     locale={this.state.locale}
                     switchLang={this.switchLang.bind(this)} {...props}/>} />
 
-                <Route path="/our_team" component={(props) => <OurTeam
+                <Route path="/about" component={(props) => <AboutPage
+                    locale={this.state.locale}
+                    switchLang={this.switchLang.bind(this)} {...props}/>} />
+
+                <Route path="/about/:type" component={(props) => <AboutPage
+                    locale={this.state.locale}
+                    switchLang={this.switchLang.bind(this)} {...props}/>} />
+
+                <Route path="/contact" component={(props) => <ContactPage
                     locale={this.state.locale}
                     switchLang={this.switchLang.bind(this)} {...props}/>} />
 
