@@ -13,20 +13,22 @@ var Post = new keystone.List('Post', {
 
 Post.add({
 	title: { type: String, required: true },
-	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
-	// author: { type: Types.Relationship, ref: 'Y', index: true },
+	state: { type: Types.Select, options: 'draft, published, archived', default: 'published', index: true },
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
-	// image: { type: Types.CloudinaryImage },
+	image: { type: Types.CloudinaryImage },
 	content: {
 		brief: { type: Types.Html, wysiwyg: true, height: 150 },
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
-	// categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
+	type: { type: Types.Select, options: [
+		{value:'post',label:'Bài viết'},
+		{value:'video',label:'Video'},
+	]},
 });
 
 Post.schema.virtual('content.full').get(function () {
 	return this.content.extended || this.content.brief;
 });
 
-Post.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';
+// Post.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';
 Post.register();

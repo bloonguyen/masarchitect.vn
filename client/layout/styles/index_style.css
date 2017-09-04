@@ -61,12 +61,12 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-end;
-	width: 300px;
+	width: 600px;
 	pointer-events: all;
 	text-transform: uppercase;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 700px) and (orientation: portrait) {
 	.cover_logo {
 		max-width: 65vw!important;
 	}
@@ -75,7 +75,16 @@
 	}
 }
 
+@media only screen and (orientation: landscape) {
+	.cover_logo {
+		max-width: 65vh!important;
+		margin-bottom: 20px;
+	}
+	.item_container {
+		width: 100vh;
+	}
 
+}
 
 .menu_item {
 

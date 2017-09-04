@@ -15,6 +15,10 @@ export default class ItemGrid extends React.Component {
 			case "project":
 				nodeList = this.props.data.map((item,index) => {
 					var url = (item.hinhDaiDien)?item.hinhDaiDien.url:null;
+					if (url) {
+						var position = url.indexOf('upload/') + 7;
+						url = [url.slice(0,position),'w_512/',url.slice(position)].join('');
+					}
 					return (
 						<li className={styles.item_container}
 							key={index}>
