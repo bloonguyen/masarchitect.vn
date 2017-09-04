@@ -60,6 +60,8 @@
 .profile_item {
 	width: 45vw;
     height: 45vw;
+	max-width: 256px;
+	max-height: 256px;
     flex: 1;
 	position: relative;
 	background-size: cover;
@@ -72,6 +74,7 @@
 
 .profile_title {
    width: 45vw;
+   max-width: 256px;
    text-transform: uppercase;
    font-weight: 600;
    text-decoration: none;
