@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import {Link, browserHistory} from 'react-router';
 
 import globalStyles from 'client/styles/globalStyles.css';
-import styles from 'client/components/styles/itemGrid_style.css';
+import gridStyles from 'client/components/styles/itemGrid_style.css';
+import styles from './styles/ourTeam_style.css';
 
 import MainLayout from 'client/layout/main.jsx';
 import ItemGrid from 'client/components/itemGrid.jsx';
+
+import {cloudinaryModify} from 'client/script/utils.js'
+
 
 export default class OurTeam extends React.Component {
 	constructor(props) {
@@ -49,17 +53,18 @@ export default class OurTeam extends React.Component {
 			var name = this.state.boss.englishName;
 			var description = this.state.boss.giaiThichTiengAnh;
 		}
+		var url = cloudinaryModify(this.state.boss.anhDaiDien.url,'w_512');
 		return (
-			<div>
-				<div style={{display:'flex',justifyContent:'center'}}>
-					<div style={{marginBottom:'10px'}}>
-						<div className={styles.profile_item}
-							style={{backgroundImage:'url('+this.state.boss.anhDaiDien.url+')'}}>
+			<div className={styles.our_team_container}>
+				<div className={styles.boss_container}>
+					<div>
+						<div className={gridStyles.profile_item}
+							style={{backgroundImage:'url('+url+')'}}>
 						</div>
-						<div className={styles.profile_title}>
+						<div className={gridStyles.profile_title}>
 							{name}
 						</div>
-						<div className={styles.profile_description}>{description}</div>
+						<div className={gridStyles.profile_description}>{description}</div>
 					</div>
 				</div>
 				<ItemGrid locale={this.props.locale} item={"profile"} data={this.state.data}/>

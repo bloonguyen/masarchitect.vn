@@ -4,6 +4,7 @@ import {Link, browserHistory} from 'react-router';
 
 import styles from './styles/itemGrid_style.css';
 
+import {cloudinaryModify} from 'client/script/utils.js'
 
 export default class ItemGrid extends React.Component {
 	handleOnClick() {
@@ -14,11 +15,7 @@ export default class ItemGrid extends React.Component {
 		switch (this.props.item) {
 			case "project":
 				nodeList = this.props.data.map((item,index) => {
-					var url = (item.hinhDaiDien)?item.hinhDaiDien.url:null;
-					if (url) {
-						var position = url.indexOf('upload/') + 7;
-						url = [url.slice(0,position),'w_512/',url.slice(position)].join('');
-					}
+					var url = (item.hinhDaiDien)?cloudinaryModify(item.hinhDaiDien.url,'w_512'):null;
 					return (
 						<li className={styles.item_container}
 							key={index}>
@@ -38,7 +35,7 @@ export default class ItemGrid extends React.Component {
 
 			case "profile":
 				nodeList = this.props.data.map((item,index) => {
-					var url = (item.anhDaiDien)? item.anhDaiDien.url:null;
+					var url = (item.anhDaiDien)? cloudinaryModify(item.anhDaiDien.url,'w_512'):null;
 					if (this.props.locale =="vi") {
 						var name = item.name;
 						var description = item.giaiThichTiengViet;

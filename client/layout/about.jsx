@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Link, browserHistory} from 'react-router';
+
 import MainLayout from 'client/layout/main.jsx';
 import NavBar from 'client/components/navBar.jsx';
 import NavBarItem from 'client/components/navBarItem.jsx';
+import OurTeam from 'client/components/OurTeam.jsx';
+
 import styles from './styles/about_style.css';
+
 export default class AboutPage extends React.Component{
     _renderAbout(){
         switch (this.props.params.type) {
@@ -14,7 +18,7 @@ export default class AboutPage extends React.Component{
                 )
             case 'staff':
                 return (
-                    <Staff/>
+                    <OurTeam locale={this.props.locale}/>
                 )
             case 'press':
                 return (
