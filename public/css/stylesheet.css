@@ -34,6 +34,10 @@ font-weight: 700;
     position: relative;
 }
 
+.slider-list {
+    min-height: 100vh;
+}
+
 #app-body {
     min-height: 100vh;
     margin: 0;

@@ -8,6 +8,7 @@
 	box-shadow: 1px 1px 3px 0px #cacaca;
 	position: relative;
 	transition: height .15s ease-out;
+	z-index: 100;
 }
 
 .semi_container{

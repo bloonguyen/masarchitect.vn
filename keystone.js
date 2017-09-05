@@ -52,7 +52,8 @@ keystone.set('nav', {
 	'users': 'users',
 	'posts': 'posts',
 	'congTrinh': ['congTrinh','loaiCongTrinh'],
-	'nhanSu': 'nhanSu'
+	'nhanSu': 'nhanSu',
+	'slidePhoto': 'slidePhoto'
 });
 
 

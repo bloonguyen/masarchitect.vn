@@ -38,7 +38,7 @@ export default class BlogPage extends React.Component {
 						/>)
 		})
 		return (
-				<MainLayout>
+				<MainLayout locale={this.props.locale}>
 					{nodeList}
 				</MainLayout>
 		)

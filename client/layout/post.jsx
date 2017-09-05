@@ -32,7 +32,7 @@ export default class PostPage extends React.Component {
 	}
 	render() {
 		return (
-				<MainLayout>
+				<MainLayout locale={this.props.locale}>
 					<Post data={this.state.data} />
 				</MainLayout>
 		)

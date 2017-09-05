@@ -34,8 +34,12 @@
 
 .cover_container {
 	position: relative;
-	display: flex;
-	justify-content: center;
+	/*display: flex;*/
+	/*justify-content: center;*/
+}
+
+.slide_show {
+	min-height: 100vh;
 }
 
 .cover_menu {

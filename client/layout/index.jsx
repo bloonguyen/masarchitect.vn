@@ -2,9 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Link, browserHistory} from 'react-router';
 import Carousel from 'nuka-carousel';
+import { CloudinaryContext, Transformation, Image } from 'cloudinary-react';
 
 import globalStyles from 'client/styles/globalStyles.css';
 import styles from './styles/index_style.css';
+
+import {cloudinaryModify} from 'client/script/utils.js'
 
 const vi = {
 	project:"công trình",
@@ -25,8 +28,27 @@ export default class IndexPage extends React.Component {
 		super(props);
 		this.state = {
 			lang:vi,
-			step:0
+			step:0,
+			images:[]
 		}
+	}
+	fetchSlidePhotoFromServer() {
+		var portrait = window.matchMedia("(orientation: portrait)");
+		var orientation = (portrait.matches)? 'portrait' : 'landscape';
+		console.log('portrait: ',portrait);
+		fetch('/api/slide/'+orientation, {
+			credentials: 'include',
+			method: 'GET',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json',
+			}
+		})
+		.then((response) => response.json())
+		.then((responseJson) => {
+			console.log('fetch result: ',responseJson);
+			this.setState({images:responseJson});
+		});
 	}
 	componentWillReceiveProps(nextProps) {
 		switch (nextProps.locale) {
@@ -45,6 +67,12 @@ export default class IndexPage extends React.Component {
 			default:
 				this.setState({lang:vi});
 		}
+		this.fetchSlidePhotoFromServer();
+	}
+	componentWillUnmount() {
+		this.setState({lang:vi,
+		step:0,
+		images:[]})
 	}
 	switchStep(val) {
 		this.setState({step:val});
@@ -64,25 +92,57 @@ export default class IndexPage extends React.Component {
 		}
 	}
 	render() {
-		console.log('locale: ',this.props.locale);
+
 		return (
 			<div className={globalStyles.main_container}>
 				<div className={styles.cover_container}>
-					<Carousel
-						dragging={false}
-						edgeEasing={null}
-						wrapAround={true}
-						autoplay={true}
-						autoplayInterval={5000}
-						>
-						<div><img className={styles.carousel_img} src="/images/mas0.jpg" /></div>
-						<div><img className={styles.carousel_img} src="/images/mas1.jpg" /></div>
-						<div><img className={styles.carousel_img} src="/images/mas2.jpg" /></div>
-						<img className={styles.carousel_img} src="/images/mas3.jpg" />
-					</Carousel>
+					<SlideShow className={styles.slide_show} images={this.state.images} />
 					{this._renderMenu()}
 				</div>
 			</div>
+		)
+	}
+}
+
+export class SlideShow extends React.Component {
+	_renderListPhoto() {
+		var size = (window.outerWidth > window.outerHeight)? window.outerWidth : window.outerHeight;
+		var resizeParam = 'w_'+size.toString();
+		var nodeList = this.props.images.map((item,index)=> {
+			if (item.image.url) {
+				console.log('index: ',index);
+				if (index!==this.props.images.length-1) {
+					return (<div>
+						<Image cloudName="masarchitect" className={styles.carousel_img} publicId={item.image.public_id}>
+							<Transformation width={size} crop="scale"/>
+						</Image>
+					</div>)
+				}
+				else {
+					console.log('last item');
+					return (
+						<Image cloudName="masarchitect" className={styles.carousel_img} publicId={item.image.public_id}>
+							<Transformation width={size} crop="scale"/>
+						</Image>
+				)
+				}
+			}
+		})
+		return nodeList;
+	}
+	render() {
+
+		return (
+				<Carousel
+					dragging={false}
+					edgeEasing={null}
+					wrapAround={true}
+					autoplay={true}
+					autoplayInterval={5000}
+					initialSlideHeight={500}
+					>
+					{this._renderListPhoto()}
+				</Carousel>
 		)
 	}
 }
@@ -96,12 +156,12 @@ export class LanguageMenu extends React.Component {
 		return (
 			<div className={styles.cover_menu}>
 				<div className={styles.item_container}>
-					<div
+					<div style={{cursor:'pointer'}}
 						onClick={(locale) => this.handleSwitchLanguage('vi')}
 						className={styles.menu_item}>
 							<h1 className={styles.item_label}>Tiếng Việt</h1>
 					</div>
-					<div
+					<div style={{cursor:'pointer'}}
 						onClick={(locale) => this.handleSwitchLanguage('en')}
 						className={styles.menu_item}>
 							<h1 className={styles.item_label}>English</h1>
