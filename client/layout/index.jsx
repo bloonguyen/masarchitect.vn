@@ -138,8 +138,7 @@ export class SlideShow extends React.Component {
 					edgeEasing={null}
 					wrapAround={true}
 					autoplay={true}
-					autoplayInterval={5000}
-					initialSlideHeight={500}
+					autoplayInterval={7000}
 					>
 					{this._renderListPhoto()}
 				</Carousel>
