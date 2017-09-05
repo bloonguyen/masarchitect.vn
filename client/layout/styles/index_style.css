@@ -112,8 +112,8 @@
     opacity: .9;
 	line-height: 2.5em;
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1024px) {
 	.menu_item {
-		/*width: 250px;*/
+		width: 60vw;
 	}
 }

@@ -64,7 +64,7 @@ export default class IndexPage extends React.Component {
 		}
 	}
 	render() {
-		console.log('locale: ',this.props.locale);
+		console.log('locale: ahi',this.props.locale);
 		return (
 			<div className={globalStyles.main_container}>
 				<div className={styles.cover_container}>

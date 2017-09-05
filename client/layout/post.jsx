@@ -33,6 +33,7 @@ export default class PostPage extends React.Component {
 	render() {
 		return (
 				<MainLayout>
+					{console.log("ahihi")}
 					<Post data={this.state.data} />
 				</MainLayout>
 		)
@@ -41,7 +42,8 @@ export default class PostPage extends React.Component {
 
 export class Post extends React.Component {
 	render() {
-		var date = (this.props.data.ngayDang)? new Date(this.props.data.ngayDang): new Date();
+	//	var date = (this.props.data.ngayDang)? new Date(this.props.data.ngayDang): new Date();
+		var date = new Date();
 		var parsedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();
 		var content = (this.props.data.noiDung)? this.props.data.noiDung.dayDu : '';
 		return (

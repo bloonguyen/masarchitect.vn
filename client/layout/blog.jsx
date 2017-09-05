@@ -7,6 +7,8 @@ import styles from './styles/blog_style.css';
 
 import MainLayout from 'client/layout/main.jsx';
 
+import PostPage from 'client/layout/post.jsx';
+
 export default class BlogPage extends React.Component {
 	constructor(props) {
 		super(props);
@@ -54,16 +56,23 @@ export class BlogPost extends React.Component {
 				<div className={globalStyles.col_4}>
 					<div className={styles.content_left_wrapper}>
 						<div className={styles.content_left}>
-							<h1>{this.props.data.title}</h1>
+						<Link to={"/post/"+this.props.data.slug}>
+						<div style={{marginTop:'10px',fontSize:'18px', fontWeight:'bold', fontFamily:'HelveticaNeue-Light'}}>
+							{this.props.data.tieuDe}
+							</div>
+							<img style ={{width:'60%'}}src={this.props.data.hinhDaiDien.url}/>
 							<p>{parsedDate}</p>
+						</Link>
 						</div>
 					</div>
 				</div>
 				<div className={globalStyles.col_8}>
 					<div className={styles.content_right}>
+
+
 						<p
-							style={{marginTop:'20px',fontStyle:'italic'}}
-							dangerouslySetInnerHTML={{__html: this.props.data.content.brief}}>
+							style={{marginTop:'20px',fontSize:'18px', fontWeight:'no', fontFamily:'HelveticaNeue-Light'}}
+							dangerouslySetInnerHTML={{__html: this.props.data.noiDung.tomTat}}>
 						</p>
 					</div>
 				</div>

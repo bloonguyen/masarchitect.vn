@@ -5,7 +5,7 @@ import {Link, browserHistory} from 'react-router';
 import MainLayout from 'client/layout/main.jsx';
 import NavBar from 'client/components/navBar.jsx';
 import NavBarItem from 'client/components/navBarItem.jsx';
-import OurTeam from 'client/components/OurTeam.jsx';
+import OurTeam from 'client/components/ourTeam.jsx';
 
 import styles from './styles/about_style.css';
 
