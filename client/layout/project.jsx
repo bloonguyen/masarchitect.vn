@@ -56,7 +56,7 @@ export class ProjectUnit extends React.Component {
 					<div className={styles.cover_photo} style={{backgroundImage:"url("+this.props.data.hinhDaiDien.url+")"}}></div>
 				</div>
 				<h1 className={styles.title}>{this.props.data.name}</h1>
-				<div className={styles.date}>{this.props.data.ngayHoanThanh}</div>
+
 				<div className={styles.description}>{description}</div>
 				<div className={styles.grid_container}></div>
 				<PhotoGrid photos={this.props.data.hinhAnhCongTrinh} cols={cols}/>
@@ -64,6 +64,8 @@ export class ProjectUnit extends React.Component {
 		)
 	}
 }
+
+// <div className={styles.date}>{this.props.data.ngayHoanThanh}</div>
 
 ProjectUnit.defaultProps =
 	{data: {
