@@ -92,7 +92,6 @@ export default class IndexPage extends React.Component {
 		}
 	}
 	render() {
-
 		return (
 			<div className={globalStyles.main_container}>
 				<div className={styles.cover_container}>
