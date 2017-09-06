@@ -7,8 +7,10 @@ import NavBar from 'client/components/navBar.jsx';
 import NavBarItem from 'client/components/navBarItem.jsx';
 import OurTeam from 'client/components/ourTeam.jsx';
 import General from 'client/components/introduction.jsx';
-
+import Press from 'client/components/press.jsx'
+import globalStyles from 'client/styles/globalStyles.css';
 import styles from './styles/about_style.css';
+import blogStyles from './styles/blog_style.css';
 
 const vi = {
     intro: 'Giới thiệu',
@@ -59,7 +61,7 @@ export default class AboutPage extends React.Component{
                 )
             case 'press':
                 return (
-                    <Press/>
+                    <Press locale ={this.props.locale}/>
                 )
             default:
                 return (
@@ -79,15 +81,6 @@ export default class AboutPage extends React.Component{
             </NavBar>
             {this._renderAbout()}
             </MainLayout>
-        );
-    }
-}
-
-
-export class Press extends React.Component{
-    render(){
-        return (
-            <div>press</div>
         );
     }
 }

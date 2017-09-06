@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Link, browserHistory} from 'react-router';
-
+import globalStyles from 'client/styles/globalStyles.css';
 import styles from 'client/layout/styles/about_style.css';
 
 const vi = {
@@ -56,19 +56,25 @@ export default class General extends React.Component{
     render(){
         return (
             <div className={styles.wrapper}>
-                <div className={styles.para_wrapper}>
-                    <h1 className={styles.title}>{this.state.lang.intro}</h1>
-                    <p className ={styles.para}>{this.state.lang.introPara}</p>
+                <div className={globalStyles.col_4}>
+                    <div className={styles.para_wrapper}>
+                        <h1 className={styles.title}>{this.state.lang.intro}</h1>
+                        <p className ={styles.para}>{this.state.lang.introPara}</p>
+                    </div>
                 </div>
 
-                <div className={styles.para_wrapper}>
-                    <h1 className={styles.title}>{this.state.lang.design}</h1>
-                    <p className ={styles.para}>{this.state.lang.designPara}</p>
+                <div className={globalStyles.col_4}>
+                    <div className={styles.para_wrapper}>
+                        <h1 className={styles.title}>{this.state.lang.design}</h1>
+                        <p className ={styles.para}>{this.state.lang.designPara}</p>
+                    </div>
                 </div>
 
-                <div className={styles.para_wrapper}>
-                    <h1 className={styles.title}>{this.state.lang.construction}</h1>
-                    <p className ={styles.para}>{this.state.lang.constructionPara}</p>
+                <div className={globalStyles.col_4}>
+                    <div className={styles.para_wrapper}>
+                        <h1 className={styles.title}>{this.state.lang.construction}</h1>
+                        <p className ={styles.para}>{this.state.lang.constructionPara}</p>
+                    </div>
                 </div>
             </div>
 

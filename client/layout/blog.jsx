@@ -51,6 +51,7 @@ export class BlogPost extends React.Component {
 	render() {
 		var date = (this.props.data.publishedDate)? new Date(this.props.data.publishedDate): new Date();
 		var parsedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();
+		if (this.props.data.kieu != "news") return null;
 		return (
 			<div className={globalStyles.main_flex_container}>
 				<div className={globalStyles.col_4}>

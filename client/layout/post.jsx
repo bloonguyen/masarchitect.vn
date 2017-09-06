@@ -4,7 +4,6 @@ import {Link, browserHistory} from 'react-router';
 
 import globalStyles from 'client/styles/globalStyles.css';
 import styles from './styles/blog_style.css';
-
 import MainLayout from 'client/layout/main.jsx';
 
 export default class PostPage extends React.Component {
@@ -33,7 +32,6 @@ export default class PostPage extends React.Component {
 	render() {
 		return (
 				<MainLayout locale={this.props.locale}>
-					{console.log("ahihi")}
 					<Post data={this.state.data} />
 				</MainLayout>
 		)
