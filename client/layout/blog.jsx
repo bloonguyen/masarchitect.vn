@@ -47,11 +47,13 @@ export default class BlogPage extends React.Component {
 	}
 }
 
+
 export class BlogPost extends React.Component {
 	render() {
 		var date = (this.props.data.publishedDate)? new Date(this.props.data.publishedDate): new Date();
 		var parsedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();
 		if (this.props.data.kieu != "news") return null;
+		var url = (this.props.data.hinhDaiDien)? this.props.data.hinhDaiDien.url : '';
 		return (
 			<div className={globalStyles.main_flex_container}>
 				<div className={globalStyles.col_4}>
@@ -61,7 +63,7 @@ export class BlogPost extends React.Component {
 						<div style={{marginTop:'10px',fontSize:'18px', fontWeight:'bold', fontFamily:'HelveticaNeue-Light'}}>
 							{this.props.data.tieuDe}
 							</div>
-							<img style ={{width:'60%'}}src={this.props.data.hinhDaiDien.url}/>
+							<img style ={{width:'60%'}}src={url}/>
 							<p>{parsedDate}</p>
 						</Link>
 						</div>
