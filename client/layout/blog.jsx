@@ -4,10 +4,8 @@ import {Link, browserHistory} from 'react-router';
 
 import globalStyles from 'client/styles/globalStyles.css';
 import styles from './styles/blog_style.css';
-
+import AvailablePost from 'client/components/getData.jsx'
 import MainLayout from 'client/layout/main.jsx';
-
-import PostPage from 'client/layout/post.jsx';
 
 export default class BlogPage extends React.Component {
 	constructor(props) {
@@ -34,52 +32,17 @@ export default class BlogPage extends React.Component {
 	}
 	render() {
 		var nodeList = this.state.blogData.map((item,index) => {
-			return (<BlogPost
-				 		data={item}
-						indexKey={index}
-						/>)
+			if (item.kieu == "news"){
+				return (<AvailablePost
+					 		data={item}
+							indexKey={index}
+							/>)
+			}
 		})
 		return (
 				<MainLayout locale={this.props.locale}>
 					{nodeList}
 				</MainLayout>
-		)
-	}
-}
-
-
-export class BlogPost extends React.Component {
-	render() {
-		var date = (this.props.data.publishedDate)? new Date(this.props.data.publishedDate): new Date();
-		var parsedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();
-		if (this.props.data.kieu != "news") return null;
-		var url = (this.props.data.hinhDaiDien)? this.props.data.hinhDaiDien.url : '';
-		return (
-			<div className={globalStyles.main_flex_container}>
-				<div className={globalStyles.col_4}>
-					<div className={styles.content_left_wrapper}>
-						<div className={styles.content_left}>
-						<Link to={"/post/"+this.props.data.slug}>
-						<div style={{marginTop:'10px',fontSize:'18px', fontWeight:'bold', fontFamily:'HelveticaNeue-Light'}}>
-							{this.props.data.tieuDe}
-							</div>
-							<img style ={{width:'60%'}}src={url}/>
-							<p>{parsedDate}</p>
-						</Link>
-						</div>
-					</div>
-				</div>
-				<div className={globalStyles.col_8}>
-					<div className={styles.content_right}>
-
-
-						<p
-							style={{marginTop:'20px',fontSize:'18px', fontWeight:'no', fontFamily:'HelveticaNeue-Light'}}
-							dangerouslySetInnerHTML={{__html: this.props.data.noiDung.tomTat}}>
-						</p>
-					</div>
-				</div>
-			</div>
 		)
 	}
 }

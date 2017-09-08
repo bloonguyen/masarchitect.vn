@@ -44,22 +44,28 @@ export class Post extends React.Component {
 		var date = new Date();
 		var parsedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();
 		var content = (this.props.data.noiDung)? this.props.data.noiDung.dayDu : '';
+		var url = (this.props.data.hinhDaiDien)? (this.props.data.hinhDaiDien.url) : '';
 		return (
 			<div className={globalStyles.main_flex_container}>
-				<div className={globalStyles.col_4}>
-					<div className={styles.content_left_wrapper}>
-						<div className={styles.content_left}>
-							<h1>{this.props.data.tieuDe}</h1>
-							<p>{parsedDate}</p>
+				<div className={styles.content_wrapper}>
+					<div className={globalStyles.col_4}>
+						<div className={styles.content_left_wrapper}>
+							<div style={{marginTop:'10px',fontSize:'25px', fontWeight:'bold',padding:' 0px 20px'}}>
+								{this.props.data.tieuDe}
+							</div>
+							<p
+								style={{color:'gray',padding:' 0px 20px'}}>
+								{parsedDate}</p>
 						</div>
 					</div>
-				</div>
-				<div className={globalStyles.col_8}>
-					<div className={styles.content_right}>
-						<p
-							style={{marginTop:'20px'}}
-							dangerouslySetInnerHTML={{__html: content}}>
-						</p>
+					<div className={globalStyles.col_8}>
+						<div className={styles.content_right}>
+						<img src={url}/>
+							<p
+								style={{marginTop:'20px'}}
+								dangerouslySetInnerHTML={{__html: content}}>
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
