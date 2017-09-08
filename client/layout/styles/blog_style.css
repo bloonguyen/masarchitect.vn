@@ -37,5 +37,12 @@
 	display: block;
 	object-fit: contain;
 	width: 100%;
+}
+
+.youtube_wrapper{
+	position: relative;
+	padding-bottom: 70%;
+	height: 0;
 	overflow: hidden;
+	margin-bottom: 10px;
 }

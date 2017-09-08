@@ -12,11 +12,13 @@ export default class AvailablePost extends React.Component {
 		var url = (this.props.data.hinhDaiDien)? this.props.data.hinhDaiDien.url : '';
 		return (
 			<div className={globalStyles.main_flex_container}>
+
 				<div className={styles.content_wrapper}>
 					<div className={globalStyles.col_4}>
 						<div className={styles.content_right}>
-							<img src={url}/>
-
+							<Link to={"/post/"+this.props.data.slug}>
+								<img src={url}/>
+							</Link>
 						</div>
 					</div>
 					<div className={globalStyles.col_8}>
