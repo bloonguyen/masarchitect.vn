@@ -5,6 +5,7 @@ import {Link, browserHistory} from 'react-router';
 import globalStyles from 'client/styles/globalStyles.css';
 import styles from './styles/blog_style.css';
 import MainLayout from 'client/layout/main.jsx';
+import Iframe from 'react-iframe';
 
 export default class PostPage extends React.Component {
 	constructor(props) {
@@ -42,6 +43,9 @@ export class Post extends React.Component {
 	render() {
 	//	var date = (this.props.data.ngayDang)? new Date(this.props.data.ngayDang): new Date();
 		var date = new Date();
+		var youtubeUrl = (this.props.data.youtubeLink)? this.props.data.youtubeLink : '';
+		youtubeUrl = youtubeUrl.replace("watch?v=","embed/")
+		console.log(youtubeUrl);
 		var parsedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();
 		var content = (this.props.data.noiDung)? this.props.data.noiDung.dayDu : '';
 		var url = (this.props.data.hinhDaiDien)? (this.props.data.hinhDaiDien.url) : '';
@@ -60,6 +64,9 @@ export class Post extends React.Component {
 					</div>
 					<div className={globalStyles.col_8}>
 						<div className={styles.content_right}>
+							<div className={styles.youtube_wrapper}>
+								<Iframe url={youtubeUrl} frameborder="0" width="100%" height="100%" display="block" position="absolute" allowfullscreen></Iframe>
+							</div>
 						<img src={url}/>
 							<p
 								style={{marginTop:'20px'}}

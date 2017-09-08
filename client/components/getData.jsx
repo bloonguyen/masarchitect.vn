@@ -11,11 +11,13 @@ export default class AvailablePost extends React.Component {
 		var parsedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();
 		return (
 			<div className={globalStyles.main_flex_container}>
+
 				<div className={styles.content_wrapper}>
 					<div className={globalStyles.col_4}>
 						<div className={styles.content_right}>
-							<img src={this.props.data.hinhDaiDien.url}/>
-
+							<Link to={"/post/"+this.props.data.slug}>
+								<img src={this.props.data.hinhDaiDien.url}/>
+							</Link>
 						</div>
 					</div>
 					<div className={globalStyles.col_8}>
