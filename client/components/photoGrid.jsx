@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import ReactPhotoGallery from 'react-photo-gallery';
 import Lightbox from 'react-image-lightbox';
 
+import {cloudinaryModify} from 'client/script/utils.js';
+
 export default class PhotoGrid extends React.Component {
 	constructor(props) {
         super(props);
@@ -23,8 +25,9 @@ export default class PhotoGrid extends React.Component {
 	}
 	render() {
 		var photos = this.props.photos.map(item => {
+			var url = cloudinaryModify(item.url,'w_512');
 			return  {
-				src:item.url,
+				src:url,
 				width:item.width,
 				height:item.height
 			}

@@ -11,7 +11,6 @@ import ItemGrid from 'client/components/itemGrid.jsx';
 
 import {cloudinaryModify} from 'client/script/utils.js'
 
-
 export default class OurTeam extends React.Component {
 	constructor(props) {
 		super(props);

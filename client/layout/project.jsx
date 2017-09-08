@@ -49,7 +49,20 @@ export class ProjectUnit extends React.Component {
 		var description = this.props.data.giaiThichTiengViet.split("\n").map(i => {
             return <div>{i}</div>;
         });
-		var cols = (window.innerWidth>900)? 3 : 2;
+		var cols;
+		var width = window.innerWidth;
+			if (width<600) {
+				cols = 2;
+			}
+			else {
+				if (width>=600 && width<1000) {
+					cols = 3;
+				}
+				else {
+					cols = 4;
+				}
+			}
+		console.log('width: ',width);
 		return (
 			<div style ={{textAlign:"center"}}>
 				<div className={styles.cover_board}>
@@ -58,8 +71,11 @@ export class ProjectUnit extends React.Component {
 				<h1 className={styles.title}>{this.props.data.name}</h1>
 
 				<div className={styles.description}>{description}</div>
-				<div className={styles.grid_container}></div>
-				<PhotoGrid photos={this.props.data.hinhAnhCongTrinh} cols={cols}/>
+				<div className={styles.grid_container}>
+				<div style={{maxWidth:'1200px'}}>
+					<PhotoGrid photos={this.props.data.hinhAnhCongTrinh} cols={cols}/>
+				</div>
+				</div>
 			</div>
 		)
 	}
