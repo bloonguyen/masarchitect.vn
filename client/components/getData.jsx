@@ -9,12 +9,13 @@ export default class AvailablePost extends React.Component {
 	render() {
 		var date = (this.props.data.publishedDate)? new Date(this.props.data.publishedDate): new Date();
 		var parsedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();
+		var url = (this.props.data.hinhDaiDien)? this.props.data.hinhDaiDien.url : '';
 		return (
 			<div className={globalStyles.main_flex_container}>
 				<div className={styles.content_wrapper}>
 					<div className={globalStyles.col_4}>
 						<div className={styles.content_right}>
-							<img src={this.props.data.hinhDaiDien.url}/>
+							<img src={url}/>
 
 						</div>
 					</div>
