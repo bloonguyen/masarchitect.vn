@@ -29,6 +29,10 @@ class App extends React.Component {
                     locale={this.state.locale}
                     switchLang={this.switchLang.bind(this)} {...props}/>}/>
 
+                <Route path="/about" component={(props) => <AboutPage
+                    locale={this.state.locale}
+                    switchLang={this.switchLang.bind(this)} {...props}/>}/>
+
                 <Route path="/menu" component={(props) => <BlogPage
                     locale={this.state.locale}
                     switchLang={this.switchLang.bind(this)} {...props}/>}/>
