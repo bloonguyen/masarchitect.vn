@@ -109,20 +109,17 @@ export class SlideShow extends React.Component {
 		var resizeParam = 'w_'+size.toString();
 		var nodeList = this.props.images.map((item,index)=> {
 			if (item.image.url) {
+				// var url = cloudinaryModify(item.image.url,)
 				console.log('index: ',index);
 				if (index!==this.props.images.length-1) {
 					return (<div>
-						<Image cloudName="masarchitect" className={styles.carousel_img} publicId={item.image.public_id}>
-							<Transformation width={size} crop="scale"/>
-						</Image>
+						<img className={styles.carousel_img} src={item.image.url}/>
 					</div>)
 				}
 				else {
 					console.log('last item');
 					return (
-						<Image cloudName="masarchitect" className={styles.carousel_img} publicId={item.image.public_id}>
-							<Transformation width={size} crop="scale"/>
-						</Image>
+						<img className={styles.carousel_img} src={item.image.url}/>
 				)
 				}
 			}

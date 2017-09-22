@@ -10,7 +10,7 @@
 
 .content_wrapper{
 	display: flex;
-	max-width: 800px;
+	width: 800px;
 	margin-left: auto;
     margin-right: auto;
     border-bottom: solid 1px #e2e2e2;
