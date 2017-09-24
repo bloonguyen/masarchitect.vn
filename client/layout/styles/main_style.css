@@ -116,16 +116,17 @@
 	text-align: right;
 }
 
-
-@media only screen and (max-width:700px) {
-	.footer_left {
-		text-align: left;
-	}
-}
-
 .footer_right {
 	padding: 10px;
 }
+
+@media only screen and (min-width:1200px) {
+	.footer_right {
+		padding-left: 0px;
+
+	}
+}
+
 
 .map_container {
 	position: relative;
