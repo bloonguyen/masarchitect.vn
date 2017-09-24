@@ -8,11 +8,22 @@ import styles from './styles/project_style.css';
 import MainLayout from 'client/layout/main.jsx';
 import PhotoGrid from 'client/components/photoGrid.jsx';
 
+const vi = {
+	portfolio: 'công trình'
+}
+
+const en = {
+	portfolio: 'portfolio'
+}
+
 export default class ProjectPage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			project: {}
+			project: undefined,
+			projectName: '',
+			category:{},
+			lang:vi
 		}
 	}
 	fetchProjectFromServer() {
@@ -27,17 +38,50 @@ export default class ProjectPage extends React.Component {
 		})
 		.then((response) => response.json())
 		.then((responseJson) => {
-			this.setState({project:responseJson});
+			var category = (responseJson.theLoai[0])?responseJson.theLoai[0] :{};
+			console.log('theloai: ',category);
+			this.setState({
+				project:responseJson,
+				category:category,
+				projectName:responseJson.name
+			});
 			console.log('fetch result: ',this.state.project);
 		});
 	}
+	componentWillReceiveProps(nextProps) {
+		switch (nextProps.locale) {
+			case 'en':
+				this.setState({lang:en});
+				break;
+			default:
+				this.setState({lang:vi});
+		}
+	}
 	componentWillMount() {
 		this.fetchProjectFromServer();
+		switch (this.props.locale) {
+			case 'en':
+				this.setState({lang:en});
+				break;
+			default:
+				this.setState({lang:vi});
+		}
 	}
 	render() {
+		console.log('state: ',this.state.category);
+		var categoryLabel = (this.props.locale == 'vi')? this.state.category.name : this.state.category.tiengAnh;
 		return(
-			<MainLayout locale={this.props.locale}>
-				<ProjectUnit data={this.state.project[0]} />
+			<MainLayout
+				switchLang={this.props.switchLang}
+				locale={this.props.locale}>
+				<div style={{marginBottom:'10px'}} className={globalStyles.breadscrumb}>
+					<Link to="/project_category">{this.state.lang.portfolio}</Link>
+					<span style={{margin:'0 10px'}}> | </span>
+					<Link to={"/project_category/"+this.state.category.key}>{categoryLabel}</Link>
+					<span style={{margin:'0 10px'}}> | </span>
+					<a>{this.state.projectName}</a>
+				</div>
+				<ProjectUnit data={this.state.project} />
 			</MainLayout>
 		)
 	}
@@ -64,13 +108,15 @@ export class ProjectUnit extends React.Component {
 			}
 		console.log('width: ',width);
 		return (
-			<div style ={{textAlign:"center"}}>
+			<div>
 				<div className={styles.cover_board}>
 					<div className={styles.cover_photo} style={{backgroundImage:"url("+this.props.data.hinhDaiDien.url+")"}}></div>
 				</div>
-				<h1 className={styles.title}>{this.props.data.name}</h1>
+				<div className={styles.text_container}>
+					<h1 className={styles.title}>{this.props.data.name}</h1>
 
-				<div className={styles.description}>{description}</div>
+					<div className={styles.description}>{description}</div>
+				</div>
 				<div className={styles.grid_container}>
 				<div style={{maxWidth:'1200px'}}>
 					<PhotoGrid photos={this.props.data.hinhAnhCongTrinh} cols={cols}/>
@@ -83,8 +129,8 @@ export class ProjectUnit extends React.Component {
 
 // <div className={styles.date}>{this.props.data.ngayHoanThanh}</div>
 
-ProjectUnit.defaultProps =
-	{data: {
+ProjectUnit.defaultProps = {
+	data: {
 		giaiThichTiengAnh: "",
 		giaiThichTiengViet: "",
 		hinhAnhCongTrinh: [],
@@ -97,5 +143,5 @@ ProjectUnit.defaultProps =
 		ngayHoanThanh: "",
 		publishedDate: "",
 		theLoai: []
-		}
 	}
+}
