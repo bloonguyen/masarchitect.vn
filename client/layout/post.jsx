@@ -30,9 +30,20 @@ export default class PostPage extends React.Component {
 	componentWillMount() {
 		this.fetchPostFromServer();
 	}
+	_renderPostLink(){
+		return null;
+	}
 	render() {
+		var blog = this.props.locale == 'vi'? "TIN TỨC":"BLOG";
+		console.log("blog:",blog);
 		return (
-				<MainLayout locale={this.props.locale}>
+				<MainLayout
+					switchLang={this.props.switchLang}
+					locale={this.props.locale}>
+					<div className={globalStyles.breadscrumb+ ' '+ styles.breadscrumb}>
+						<Link to="/blog">{blog}</Link>
+						{this._renderPostLink()}
+					</div>
 					<Post data={this.state.data} />
 				</MainLayout>
 		)
@@ -58,20 +69,19 @@ export class Post extends React.Component {
 				<div className={styles.content_wrapper}>
 					<div className={globalStyles.col_4}>
 						<div className={styles.content_left_wrapper}>
-							<div style={{marginTop:'10px',fontSize:'25px', fontWeight:'bold',padding:' 0px 20px'}}>
+							<div className={styles.title}>
 								{this.props.data.tieuDe}
 							</div>
-							<p
-								style={{color:'gray',padding:' 0px 20px'}}>
+							<p className={styles.publishedDate}>
 								{parsedDate}</p>
 						</div>
 					</div>
 					<div className={globalStyles.col_8}>
 						<div className={styles.content_right}>
 						{youtubeEmbeded}
-						<img src={url}/>
-							<p
-								style={{marginTop:'20px'}}
+						<img src={url} style={{padding:'10px'}}/>
+							<p className={styles.title}
+								style={{marginTop:'20px',fontWeight:'300'}}
 								dangerouslySetInnerHTML={{__html: content}}>
 							</p>
 						</div>

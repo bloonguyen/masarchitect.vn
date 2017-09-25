@@ -50,10 +50,12 @@ export default class MainLayout extends React.Component {
 		return (
 			<div className={globalStyles.main_container}>
 				<div className={styles.semi_container}>
-					<HeaderBar lang={this.state.lang} />
+					<HeaderBar
+						switchLang={this.props.switchLang}
+						lang={this.state.lang}
+						locale={this.props.locale} />
 					<div className={styles.main_content_body}>{this.props.children}</div>
 				</div>
-				<FooterBar lang={this.state.lang}/>
 			</div>
 		)
 	}
@@ -92,7 +94,11 @@ export class HeaderBar extends React.Component {
 	_renderNavBar() {
 		if (!this.state.mobileMode) { //desktop view
 			return (
-					<HeaderBarItems mode={"desktop"} lang={this.props.lang}/>
+					<HeaderBarItems
+						switchLang={this.props.switchLang}
+						locale={this.props.locale}
+						mode={"desktop"}
+						lang={this.props.lang}/>
 			)
 		}
 		else {
@@ -109,7 +115,11 @@ export class HeaderBar extends React.Component {
 						<div onClick={()=>this.handleDropDownNavBar()} className={styles.menu_icon_container}>
 							<img className={styles.menu_icon} src="/images/icon/menu_icon_black.png" />
 						</div>
-						<HeaderBarItems mode={"mobile"} lang={this.props.lang}/>
+						<HeaderBarItems
+							mode={"mobile"}
+							lang={this.props.lang}
+							switchLang={this.props.switchLang}
+							locale={this.props.locale}/>
 					</div>
 				)
 			}
@@ -117,7 +127,7 @@ export class HeaderBar extends React.Component {
 		}
 	}
 	render() {
-		var height = (this.state.navBarDropDown)? '170px' : '60px';
+		var height = (this.state.navBarDropDown)? '250px' : '60px';
 		return (
 			<div className={styles.header_container} style={{height:height}}>
 				<Link style={{alignSelf:'flex-start',marginTop:'10px'}} to="/"><img className={styles.header_logo} src="/images/logo/transparent_grey.png" /></Link>
@@ -128,6 +138,28 @@ export class HeaderBar extends React.Component {
 }
 
 export class HeaderBarItems extends React.Component {
+	switchLang() {
+		if (this.props.locale == 'vi'){
+			console.log('header bar items: ',this.props);
+			this.props.switchLang('en')
+		}
+		else this.props.switchLang('vi');
+	}
+	_renderSubMenu() {
+		var localeLabel = (this.props.locale == 'vi')? 'english' : 'vietnamese';
+		if (this.props.mode == 'mobile') {
+			return (
+				<div style={{display:'flex',flexDirection:'column',alignItems:'flex-end'}}>
+					<li style={{marginTop:'15px'}} className={styles.nav_item}><Link to="/contact">Instagram</Link></li>
+					<li className={styles.nav_item}><Link to="/contact">Facebook</Link></li>
+					<li style={{marginTop:'15px'}} className={styles.nav_item}><a onClick={()=>this.switchLang()}>{localeLabel}</a></li>
+				</div>
+			)
+		}
+		else {
+			return null;
+		}
+	}
 	render() {
 		switch (this.props.mode) {
 			case 'desktop':
@@ -139,12 +171,13 @@ export class HeaderBarItems extends React.Component {
 			default:
 				var container = styles.expanded_container;
 		}
-		return(
+		return (
 			<ul className={container}>
 				<li className={styles.nav_item}><Link to="/about">{this.props.lang.about}</Link></li>
 				<li className={styles.nav_item}><Link to="/project_category">{this.props.lang.project}</Link></li>
 				<li className={styles.nav_item}><Link to="/blog">{this.props.lang.news}</Link></li>
 				<li className={styles.nav_item}><Link to="/contact">{this.props.lang.contact}</Link></li>
+				{this._renderSubMenu()}
 			</ul>
 		)
 	}

@@ -6,12 +6,19 @@
 }
 
 .grid {
-	padding: 0;
+	padding-left: 9px;
+	padding-right: 9px;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-between;
 	width: 100%;
-	max-width: 1300px;
+	max-width: 1200px;
+}
+
+@media only screen and (min-width: 1200px) {
+	.grid {
+		padding: 0;
+	}
 }
 
 .project_title {
@@ -19,14 +26,15 @@
 	max-width: 320px;
 	margin-left: 3px;
 	text-transform: uppercase;
-	font-weight: 500;
+	font-weight: 400;
+	font-size: 13px;
 	text-decoration: none;
 	color: #505050;
 }
 
 .item_container {
 	max-width: 320px;
-	width: 45vw;
+	width: 50%;
 	list-style: none;
 	margin-bottom: 10px;
 }
@@ -36,11 +44,11 @@
 }
 
 .project_item {
-	width: 45vw;
+	/*width: 45vw;*/
     height: 27vw;
 	max-width: 320px;
 	max-height: 192px;
-    margin: 3px;
+    margin: 1px;
     flex: 1;
 	position: relative;
 	background-size: cover;

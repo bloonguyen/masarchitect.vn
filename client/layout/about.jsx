@@ -13,13 +13,15 @@ import styles from './styles/about_style.css';
 import blogStyles from './styles/blog_style.css';
 
 const vi = {
-    intro: 'Giới thiệu',
+    about: 'Hồ sơ',
+    general: 'Giới thiệu',
     staff: 'Nhân sự',
     press: 'Truyền thông'
 }
 
 const en = {
-    intro: 'Introduction',
+    about: 'About',
+    general: 'Introduction',
     staff: 'Our team',
     press: 'Press release'
 }
@@ -72,14 +74,22 @@ export default class AboutPage extends React.Component{
     }
     render(){
         console.log("Param",this.props.params.type);
+        var categoryLabel = (this.props.params.type)? this.state.lang[this.props.params.type] : 'general';
         return (
-            <MainLayout locale={this.props.locale}>
-            <NavBar>
-                <NavBarItem route={'/about/general'}>{this.state.lang.intro}</NavBarItem>
-                <NavBarItem route={'/about/staff'}>{this.state.lang.staff}</NavBarItem>
-                <NavBarItem route={'/about/press'}>{this.state.lang.press}</NavBarItem>
-            </NavBar>
-            {this._renderAbout()}
+            <MainLayout
+                switchLang={this.props.switchLang}
+                locale={this.props.locale}>
+                <div style={{marginBottom:'10px'}} className={globalStyles.breadscrumb}>
+                    <Link to="/about">{this.state.lang.about}</Link>
+                    <span style={{margin:'0 10px'}}> | </span>
+                    <Link to={"/about/"+this.props.params.type}>{categoryLabel}</Link>
+                </div>
+                <NavBar>
+                    <NavBarItem route={'/about/general'}>{this.state.lang.general}</NavBarItem>
+                    <NavBarItem route={'/about/staff'}>{this.state.lang.staff}</NavBarItem>
+                    <NavBarItem route={'/about/press'}>{this.state.lang.press}</NavBarItem>
+                </NavBar>
+                {this._renderAbout()}
             </MainLayout>
         );
     }

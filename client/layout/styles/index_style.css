@@ -108,18 +108,22 @@
 
 }
 
-.item_label:hover{
-	cursor: pointer;
-	opacity: 1;
-}
+
 .item_label {
 	margin: 0;
 	padding: 0;
 	font-size: 15px;
 	font-weight: normal;
     color: #fff;
-    opacity: .9;
+    opacity: .7;
 	line-height: 2.5em;
+	transition: all 0.5s linear;
+}
+.item_label:hover{
+	cursor: pointer;
+	opacity: 1;
+	color: #fff;
+	font-weight: 600;
 }
 @media only screen and (max-width: 1024px) {
 	.menu_item {

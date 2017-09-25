@@ -10,12 +10,21 @@ import NavBar from 'client/components/navBar.jsx';
 import NavBarItem from 'client/components/navBarItem.jsx';
 import ItemGrid from 'client/components/itemGrid.jsx';
 
+const vi = {
+	portfolio: 'công trình'
+}
+
+const en = {
+	portfolio: 'portfolio'
+}
+
 export default class ProjectCategory extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			categories: [],
 			projects: [],
+			lang:vi
 		}
 	}
 	fetchProjectCategoryFromServer() {
@@ -30,7 +39,7 @@ export default class ProjectCategory extends React.Component {
 		.then((response) => response.json())
 		.then((responseJson) => {
 			this.setState({categories:responseJson});
-			console.log('fetch result: ',this.state.category);
+			console.log('fetch categories result: ',this.state.category);
 		})
 	}
 	fetchProjectsFromServer(categoryName) {
@@ -46,12 +55,19 @@ export default class ProjectCategory extends React.Component {
 		.then((response) => response.json())
 		.then((responseJson) => {
 			this.setState({projects:responseJson});
-			console.log('fetch result: ',this.state.projects);
+			console.log('fetch projects result: ',this.state.projects);
 		})
 	}
 	componentWillMount() {
 		this.fetchProjectCategoryFromServer();
 		this.fetchProjectsFromServer(this.props.params.name);
+		switch (this.props.locale) {
+			case 'en':
+				this.setState({lang:en});
+				break;
+			default:
+				this.setState({lang:vi});
+		}
 	}
 	componentWillUnmount() {
 		this.setState({categories:[],projects:[]});
@@ -60,11 +76,27 @@ export default class ProjectCategory extends React.Component {
 		if (nextProps.params.name != this.props.params.name) {
 			this.fetchProjectsFromServer(nextProps.params.name);
 		}
+		switch (nextProps.locale) {
+			case 'en':
+				this.setState({lang:en});
+				break;
+			default:
+				this.setState({lang:vi});
+		}
+	}
+	_renderCategoryLink() {
+		if (this.props.params.name && this.state.categories.length) {
+			var {categories} = this.state;
+			var locationKey = categories.findIndex(item => item.key==this.props.params.name); //tim index cua params hien tai trong this.state.categories
+			console.log('locationKey: ',categories);
+			var label = (this.props.locale == 'vi')? categories[locationKey].name : categories[locationKey].tiengAnh;
+			return (<span> <span style={{margin:'0 10px'}}>|</span> <Link to={"/project_category/"+this.props.params.name}>{label}</Link></span>)
+		}
+		else return null;
 	}
 	render() {
-		console.log('categories: ',this.state.categories);
+		console.log('locale: ',this.props.locale,this.state.lang);
 		var nodeList = (!this.state.categories.length)? null : this.state.categories.map(item => {
-			console.log('navBarItem: ',item,this.props.locale);
 			var label = (this.props.locale == 'vi')? item.name : item.tiengAnh;
 			return (
 				<NavBarItem route={'/project_category/'+item.key}>
@@ -73,14 +105,22 @@ export default class ProjectCategory extends React.Component {
 			);
 		});
 		var allText = (this.props.locale == 'vi')? 'Tất cả': 'All Projects'
+		console.log("lang",this.state.lang.portfolio);
 		return (
-			<MainLayout locale={this.props.locale}>
+			<MainLayout
+				switchLang={this.props.switchLang}
+				locale={this.props.locale}>
+				<div className={globalStyles.breadscrumb}>
+					<Link to="/project_category">{this.state.lang.portfolio}</Link>
+					{this._renderCategoryLink()}
+				</div>
 				<NavBar>
 					<NavBarItem route={'/project_category/'}>
 						{allText}
 					</NavBarItem>
 					{nodeList}
 				</NavBar>
+
 				<ItemGrid item={"project"} data={this.state.projects}/>
 			</MainLayout>
 		)

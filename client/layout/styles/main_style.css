@@ -21,12 +21,12 @@
 
 .header_logo {
 	height: 50px;
-	margin-left: 20px;
+	margin-left: 10px;
 	opacity: 1;
 }
 
 .menu_icon_container {
-	padding: 18px;
+	padding: 18px 10px;
 	display: flex;
 	justify-content: flex-end;
 	position: absolute;
@@ -53,6 +53,7 @@
 	position: absolute;
 	bottom: 0;
 	right: 0;
+    margin-bottom: 6px;
 }
 
 .nav_item {
@@ -60,18 +61,20 @@
 	height: 100%;
 	margin-bottom: 4px;
 	text-transform: uppercase;
+	cursor: pointer;
 }
 
 .nav_item a {
 	text-decoration: none;
-	font-size: 15px;
-	color: rgb(80,80,80);
+	font-size: 13px;
+    line-height: 1.5em;
+	color: #505050;
 	transition: color 300ms linear;
 	height: 100%;
     display: flex;
     align-items: center;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .nav_item:hover a {
@@ -86,23 +89,26 @@
 }
 
 .footer_container {
-	background-color: #ebebeb;
+	background-color: #fff;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .footer_container h1 {
-	font-size: 18px;
-	font-weight: bold;
-	line-height: 1.5em;
+	font-size: 14px;
+	line-height: 1.42857143;
+	font-weight: 400;
 	margin: 0;
 	padding: 0;
 }
 
 .footer_container h2 {
-	font-size: 18px;
-	line-height: 1.5em;
+	font-size: 14px;
+	line-height: 1.42857143;
+	font-weight: 400;
 	margin: 0;
 	padding: 0;
-	margin-bottom: 7px;
 }
 
 .footer_left {
@@ -110,13 +116,24 @@
 	text-align: right;
 }
 
+.footer_right {
+	padding: 10px;
+}
 
-@media only screen and (max-width:700px) {
-	.footer_left {
-		text-align: left;
+@media only screen and (min-width:1200px) {
+	.footer_right {
+		padding-left: 0px;
+
 	}
 }
 
-.footer_right {
-	padding: 20px;
+
+.map_container {
+	position: relative;
+	width: 100%;
+	height: 65vh;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
 }
