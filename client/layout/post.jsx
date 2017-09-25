@@ -45,10 +45,14 @@ export class Post extends React.Component {
 		var date = new Date();
 		var youtubeUrl = (this.props.data.youtubeLink)? this.props.data.youtubeLink : '';
 		youtubeUrl = youtubeUrl.replace("watch?v=","embed/")
-		console.log(youtubeUrl);
 		var parsedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();
 		var content = (this.props.data.noiDung)? this.props.data.noiDung.dayDu : '';
 		var url = (this.props.data.hinhDaiDien)? (this.props.data.hinhDaiDien.url) : '';
+		var youtubeEmbeded = (this.props.data.youtubeLink)? (
+			<div className={styles.youtube_wrapper}>
+				<Iframe url={youtubeUrl} frameborder="0" width="100%" height="100%" display="block" position="absolute" allowfullscreen="true"></Iframe>
+			</div>
+		) : null;
 		return (
 			<div className={globalStyles.main_flex_container}>
 				<div className={styles.content_wrapper}>
@@ -64,9 +68,7 @@ export class Post extends React.Component {
 					</div>
 					<div className={globalStyles.col_8}>
 						<div className={styles.content_right}>
-							<div className={styles.youtube_wrapper}>
-								<Iframe url={youtubeUrl} frameborder="0" width="100%" height="100%" display="block" position="absolute" allowfullscreen></Iframe>
-							</div>
+						{youtubeEmbeded}
 						<img src={url}/>
 							<p
 								style={{marginTop:'20px'}}

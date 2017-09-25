@@ -29,6 +29,10 @@ class App extends React.Component {
                     locale={this.state.locale}
                     switchLang={this.switchLang.bind(this)} {...props}/>}/>
 
+                <Route path="/about" component={(props) => <AboutPage
+                    locale={this.state.locale}
+                    switchLang={this.switchLang.bind(this)} {...props}/>}/>
+
                 <Route path="/blog" component={(props) => <BlogPage
                     locale={this.state.locale}
                     switchLang={this.switchLang.bind(this)} {...props}/>}/>
@@ -46,14 +50,6 @@ class App extends React.Component {
                     switchLang={this.switchLang.bind(this)} {...props}/>}/>
 
                 <Route path="/project/:name" component={(props) => <ProjectPage
-                    locale={this.state.locale}
-                    switchLang={this.switchLang.bind(this)} {...props}/>} />
-
-                <Route path="/about" component={(props) => <AboutPage
-                    locale={this.state.locale}
-                    switchLang={this.switchLang.bind(this)} {...props}/>} />
-
-                <Route path="/about/:type" component={(props) => <AboutPage
                     locale={this.state.locale}
                     switchLang={this.switchLang.bind(this)} {...props}/>} />
 

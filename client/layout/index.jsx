@@ -152,14 +152,14 @@ export class LanguageMenu extends React.Component {
 			<div className={styles.cover_menu}>
 				<div className={styles.item_container}>
 					<div style={{cursor:'pointer'}}
-						onClick={(locale) => this.handleSwitchLanguage('vi')}
-						className={styles.menu_item}>
-							<h1 className={styles.item_label}>Tiếng Việt</h1>
-					</div>
-					<div style={{cursor:'pointer'}}
 						onClick={(locale) => this.handleSwitchLanguage('en')}
 						className={styles.menu_item}>
 							<h1 className={styles.item_label}>English</h1>
+					</div>
+					<div style={{cursor:'pointer'}}
+						onClick={(locale) => this.handleSwitchLanguage('vi')}
+						className={styles.menu_item}>
+							<h1 className={styles.item_label}>Vietnamese</h1>
 					</div>
 				</div>
 				<img className={styles.cover_logo} src="/images/logo/transparent_lightgrey.png" />

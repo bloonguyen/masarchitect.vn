@@ -150,8 +150,8 @@ export class HeaderBarItems extends React.Component {
 		if (this.props.mode == 'mobile') {
 			return (
 				<div style={{display:'flex',flexDirection:'column',alignItems:'flex-end'}}>
-					<li style={{marginTop:'15px'}} className={styles.nav_item}><Link to="/contact">Instagram</Link></li>
-					<li className={styles.nav_item}><Link to="/contact">Facebook</Link></li>
+					<li style={{marginTop:'15px'}} className={styles.nav_item}><a href="https://www.instagram.com/mas.architecture/" target="_blank">Instagram</a></li>
+					<li className={styles.nav_item}><a href="https://www.facebook.com/masarchitect/" target="_blank">Facebook</a></li>
 					<li style={{marginTop:'15px'}} className={styles.nav_item}><a onClick={()=>this.switchLang()}>{localeLabel}</a></li>
 				</div>
 			)
