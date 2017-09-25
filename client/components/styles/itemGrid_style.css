@@ -32,6 +32,16 @@
 	color: #505050;
 }
 
+.project_address {
+	width: 45vw;
+	max-width: 320px;
+	margin-left: 3px;
+	font-weight: 300;
+	font-size: 12px;
+	text-decoration: none;
+	color: #505050;
+}
+
 .item_container {
 	max-width: 320px;
 	width: 50%;
@@ -53,8 +63,17 @@
 	position: relative;
 	background-size: cover;
 }
-
-.project_item::after {
+.item_container:hover .project_title{
+	font-weight: 600;
+}
+.item_container:hover .project_address{
+	font-weight: 600;
+}
+.item_container:hover .mask_item{
+	background-color: #000;
+	opacity: 0.1;
+}
+.mask_item{
 	position: absolute;
 	top: 0;
 	left: 0;
