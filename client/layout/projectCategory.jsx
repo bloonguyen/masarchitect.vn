@@ -39,7 +39,7 @@ export default class ProjectCategory extends React.Component {
 		.then((response) => response.json())
 		.then((responseJson) => {
 			this.setState({categories:responseJson});
-			console.log('fetch result: ',this.state.category);
+			console.log('fetch categories result: ',this.state.category);
 		})
 	}
 	fetchProjectsFromServer(categoryName) {
@@ -55,7 +55,7 @@ export default class ProjectCategory extends React.Component {
 		.then((response) => response.json())
 		.then((responseJson) => {
 			this.setState({projects:responseJson});
-			console.log('fetch result: ',this.state.projects);
+			console.log('fetch projects result: ',this.state.projects);
 		})
 	}
 	componentWillMount() {
@@ -105,6 +105,7 @@ export default class ProjectCategory extends React.Component {
 			);
 		});
 		var allText = (this.props.locale == 'vi')? 'Tất cả': 'All Projects'
+		console.log("lang",this.state.lang.portfolio);
 		return (
 			<MainLayout
 				switchLang={this.props.switchLang}

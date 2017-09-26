@@ -22,10 +22,14 @@ export default class ItemGrid extends React.Component {
 							<Link to={"/project/"+item.key}>
 								<div className={styles.project_item}
 									style={{backgroundImage:'url('+url+')'}}>
+									<div className={styles.mask_item}></div>
 								</div>
 								<div
 									className={styles.project_title}>
 									{item.name}
+								</div>
+								<div className={styles.project_address}>
+									{item.diaChi}
 								</div>
 							</Link>
 						</li>

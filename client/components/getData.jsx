@@ -12,7 +12,6 @@ export default class AvailablePost extends React.Component {
 		var url = (this.props.data.hinhDaiDien)? this.props.data.hinhDaiDien.url : '';
 		return (
 			<div className={globalStyles.main_flex_container}>
-
 				<div className={styles.content_wrapper}>
 					<div className={globalStyles.col_4}>
 						<div className={styles.content_right}>
@@ -23,7 +22,7 @@ export default class AvailablePost extends React.Component {
 					</div>
 					<div className={globalStyles.col_8}>
 							<div className={styles.content_left}>
-							<Link to={"/post/"+this.props.data.slug}>
+							<Link to={"/post/"+this.props.data.slug} style={{textDecoration:'none'}}>
 								<div style={{marginTop:'10px',fontSize:'18px', fontWeight:'bold', fontFamily:'HelveticaNeue-Light'}}>
 									{this.props.data.tieuDe}
 								</div>
@@ -31,7 +30,6 @@ export default class AvailablePost extends React.Component {
 									style={{marginTop:'5px',fontSize:'18px', fontWeight:'no', fontFamily:'HelveticaNeue-Light'}}
 									dangerouslySetInnerHTML={{__html: this.props.data.noiDung.tomTat}}>
 								</p>
-
 								<p style ={{color:'gray'}}>{parsedDate}</p>
 							</Link>
 							</div>
