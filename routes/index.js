@@ -51,6 +51,7 @@ exports = module.exports = function(app) {
 	app.get('/api/project/:name',routes.api.project);
 	app.get('/api/our_team',routes.api.ourTeam);
 	app.get('/api/slide/:type',routes.api.slide);
+	app.get('/api/about',routes.api.about);
 	// app.get('*', routes.views.blog);
 
 };

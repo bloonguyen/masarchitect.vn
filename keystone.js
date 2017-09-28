@@ -54,7 +54,8 @@ keystone.set('nav', {
 		'users',
 		'posts',
 		'nhanSu',
-		'slidePhoto'
+		'slidePhoto',
+		'gioiThieu'
 	]
 });
 
