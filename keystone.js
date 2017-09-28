@@ -49,11 +49,13 @@ keystone.set('routes', require('./routes'));
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
-	'users': 'users',
-	'posts': 'posts',
-	'congTrinh': ['congTrinh','loaiCongTrinh'],
-	'nhanSu': 'nhanSu',
-	'slidePhoto': 'slidePhoto'
+	'công trình': ['congTrinh','loaiCongTrinh'],
+	'khác': [
+		'users',
+		'posts',
+		'nhanSu',
+		'slidePhoto'
+	]
 });
 
 

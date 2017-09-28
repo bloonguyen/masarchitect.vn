@@ -2,6 +2,8 @@ var keystone = require('keystone');
 
 var loaiCongTrinh = new keystone.List('loaiCongTrinh', {
 	autokey: { from: 'name', path: 'key', unique: true },
+	label: 'Loại công trình',
+	plural: 'Loại công trình'
 });
 
 loaiCongTrinh.add({

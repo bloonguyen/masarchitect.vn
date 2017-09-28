@@ -3,11 +3,13 @@ var Types = keystone.Field.Types;
 
 
 var nhanSu = new keystone.List('nhanSu', {
-	autokey: { from: 'name', path: 'key', unique: true }
+	autokey: { from: 'name', path: 'key', unique: true },
+	label: 'Nhân sự',
+	plural: 'Nhân sự',
 });
 
 nhanSu.add({
-	name: { type: String, required: true },
+	name: { type: String, required: true, label:'Tên' },
 	englishName: {type: String},
 	chucVu: {type: Types.Select, numeric:true, options: [
 		{ value: 0, label: 'Giám đốc'},

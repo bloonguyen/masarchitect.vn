@@ -9,25 +9,32 @@ var Types = keystone.Field.Types;
 var Post = new keystone.List('Post', {
 	map: { name: 'tieuDe' },
 	autokey: { path: 'slug', from: 'tieuDe', unique: true },
+	label: 'Bài viết'
 });
 
 Post.add({
-	tieuDe: { type: String, required: true },
-	trangThai: { type: Types.Select, options: 'draft, published, archived', default: 'published', index: true },
-	kieu: { type: Types.Select, options: [
+	tieuDe: { type: String, required: true,label: 'Tiêu đề' },
+	trangThai: { type: Types.Select, options: 'draft, published, archived', default: 'published', index: true,label: 'Trạng thái' },
+	kieu: { type: Types.Select,
+		options: [
 		{value:'news',label:'Tin Tức'},
 		{value:'press',label:'Truyền thông'},
-	]},
-	ngonNgu: { type: Types.Select, options: [
+		],
+		label: 'Kiểu'
+	},
+	ngonNgu: { type: Types.Select,
+		options: [
 		{value:'vi',label:'Tiếng Việt'},
 		{value:'en',label:'Tiếng Anh'},
-	]},
+		],
+		label: 'Ngôn ngữ'
+	},
 	youtubeLink: {type: String},
-	ngayDang: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
-	hinhDaiDien: { type: Types.CloudinaryImage },
+	ngayDang: { type: Types.Date, index: true, dependsOn: { state: 'published' }, label:'Ngày đăng' },
+	hinhDaiDien: { type: Types.CloudinaryImage, label: 'Hình đại diện' },
 	noiDung: {
-		tomTat: { type: Types.Html, wysiwyg: true, height: 150 },
-		dayDu: { type: Types.Html, wysiwyg: true, height: 400 },
+		tomTat: { type: Types.Html, wysiwyg: true, height: 150, label: 'Tóm tắt' },
+		dayDu: { type: Types.Html, wysiwyg: true, height: 400, label: 'Đầy đủ' },
 	},
 });
 

@@ -7,7 +7,9 @@ var Types = keystone.Field.Types;
  */
 
 var congTrinh = new keystone.List('congTrinh', {
-	autokey: { from: 'name', path: 'key', unique: true }
+	autokey: { from: 'name', path: 'key', unique: true },
+	label: 'Công trình',
+	plural: 'Công trình'
 });
 
 congTrinh.add({

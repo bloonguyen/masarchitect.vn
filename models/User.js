@@ -2,7 +2,10 @@ var keystone = require('keystone');
 var transform = require('model-transform');
 var Types = keystone.Field.Types;
 
-var User = new keystone.List('User');
+var User = new keystone.List('User', {
+	label: 'Tài khoản',
+	plural: 'Tài khoản'
+});
 
 User.add({
 	name: { type: Types.Name, required: true, index: true },
