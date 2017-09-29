@@ -74,7 +74,7 @@ export default class AboutPage extends React.Component{
     }
     render(){
         console.log("Param",this.props.params.type);
-        var categoryLabel = (this.props.params.type)? this.state.lang[this.props.params.type] : 'general';
+        var categoryLabel = (this.props.params.type)? this.state.lang[this.props.params.type] : this.state.lang['general'];
         return (
             <MainLayout
                 switchLang={this.props.switchLang}

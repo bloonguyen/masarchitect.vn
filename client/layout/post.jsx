@@ -80,8 +80,7 @@ export class Post extends React.Component {
 						<div className={styles.content_right}>
 						{youtubeEmbeded}
 						<img src={url} style={{padding:'10px'}}/>
-							<p className={styles.title}
-								style={{marginTop:'20px',fontWeight:'300'}}
+							<p className={styles.title} style={{fontSize:'14px',marginTop:'20px',fontWeight:'300'}}
 								dangerouslySetInnerHTML={{__html: content}}>
 							</p>
 						</div>

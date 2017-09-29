@@ -23,11 +23,11 @@ export default class AvailablePost extends React.Component {
 					<div className={globalStyles.col_8}>
 							<div className={styles.content_left}>
 							<Link to={"/post/"+this.props.data.slug} style={{textDecoration:'none'}}>
-								<div style={{marginTop:'10px',fontSize:'18px', fontWeight:'bold', fontFamily:'HelveticaNeue-Light'}}>
+								<div style={{marginTop:'10px',fontSize:'16px', fontWeight:'bold', fontFamily:'HelveticaNeue-Light'}}>
 									{this.props.data.tieuDe}
 								</div>
 								<p
-									style={{marginTop:'5px',fontSize:'18px', fontWeight:'no', fontFamily:'HelveticaNeue-Light'}}
+									style={{marginTop:'5px',fontSize:'14px', fontWeight:'no', fontFamily:'HelveticaNeue-Light'}}
 									dangerouslySetInnerHTML={{__html: this.props.data.noiDung.tomTat}}>
 								</p>
 								<p style ={{color:'gray'}}>{parsedDate}</p>
