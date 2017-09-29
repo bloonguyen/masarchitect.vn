@@ -51,9 +51,16 @@
 	flex-direction: column;
 	align-items: flex-end;
 	position: absolute;
-	bottom: 0;
-	right: 0;
+	bottom: 0!important;
+	right: 0!important;
     margin-bottom: 6px;
+	padding: 0;
+}
+
+.expanded_nav_bar {
+	position: relative;
+    height: 100%;
+    width: 100%;
 }
 
 .nav_item {
