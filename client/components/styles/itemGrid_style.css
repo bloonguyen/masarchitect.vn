@@ -17,7 +17,16 @@
 
 .grid::after {
 	content: "";
-    flex: auto;
+	max-width: 320px;
+	width: 50%;
+	list-style: none;
+	margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+	.grid::after {
+		width: auto;
+	}
 }
 
 @media only screen and (min-width: 1200px) {
