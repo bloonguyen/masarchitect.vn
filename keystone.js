@@ -9,7 +9,7 @@ keystone.init({
 	'views': 'templates/views',
 	'view engine': 'ejs',
 	'custom engine': require('ejs').__express,
-
+	'wysiwyg additional buttons':'insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
 	'auto update': true,
 	'session': true,
 	'auth': true,
