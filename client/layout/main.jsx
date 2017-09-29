@@ -157,7 +157,24 @@ export class HeaderBarItems extends React.Component {
 			)
 		}
 		else {
-			return null;
+			return (
+				<div style={{display:'flex'}}>
+
+					<li className={styles.nav_item}>
+						<a onClick={()=>this.switchLang()}>{localeLabel}</a>
+					</li>
+					<li className={styles.nav_item}>
+						<a href="https://www.instagram.com/mas.architecture/" target="_blank">
+							<img style={{height:'20px',margin:'0 -5px'}} src="/images/icon/social_insta.png"/>
+						</a>
+					</li>
+					<li className={styles.nav_item}>
+						<a href="https://www.facebook.com/masarchitect/" target="_blank">
+							<img style={{height:'20px',margin:'0 -5px'}} src="/images/icon/social_fb.png"/>
+						</a>
+					</li>
+				</div>
+			);
 		}
 	}
 	render() {

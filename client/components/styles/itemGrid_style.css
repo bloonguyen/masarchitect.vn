@@ -53,6 +53,12 @@
 	text-decoration: none;
 }
 
+@media only screen and (min-width: 768px) {
+	.item_container {
+		width: auto;
+	}
+}
+
 .project_item {
 	/*width: 45vw;*/
     height: 27vw;
