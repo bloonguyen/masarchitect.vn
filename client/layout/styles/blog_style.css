@@ -56,6 +56,11 @@
 .content_left_wrapper{
 	position: sticky; top: 10px;
 }
+
+.content_wrapper {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
 }
 
 .content_left h1{
