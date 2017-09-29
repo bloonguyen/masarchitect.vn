@@ -94,7 +94,7 @@ export class HeaderBar extends React.Component {
 	_renderNavBar() {
 		if (!this.state.mobileMode) { //desktop view
 			return (
-					<HeaderBarItems
+					<HeaderBarDesktop
 						switchLang={this.props.switchLang}
 						locale={this.props.locale}
 						mode={"desktop"}
@@ -115,7 +115,7 @@ export class HeaderBar extends React.Component {
 						<div onClick={()=>this.handleDropDownNavBar()} className={styles.menu_icon_container}>
 							<img className={styles.menu_icon} src="/images/icon/menu_icon_black.png" />
 						</div>
-						<HeaderBarItems
+						<HeaderBarMobile
 							mode={"mobile"}
 							lang={this.props.lang}
 							switchLang={this.props.switchLang}
@@ -137,7 +137,9 @@ export class HeaderBar extends React.Component {
 	}
 }
 
-export class HeaderBarItems extends React.Component {
+
+
+export class HeaderBarDesktop extends React.Component {
 	switchLang() {
 		if (this.props.locale == 'vi'){
 			console.log('header bar items: ',this.props);
@@ -145,56 +147,52 @@ export class HeaderBarItems extends React.Component {
 		}
 		else this.props.switchLang('vi');
 	}
-	_renderSubMenu() {
-		var localeLabel = (this.props.locale == 'vi')? 'english' : 'vietnamese';
-		if (this.props.mode == 'mobile') {
-			return (
-				<div style={{display:'flex',flexDirection:'column',alignItems:'flex-end'}}>
-					<li style={{marginTop:'15px'}} className={styles.nav_item}><a href="https://www.instagram.com/mas.architecture/" target="_blank">Instagram</a></li>
-					<li className={styles.nav_item}><a href="https://www.facebook.com/masarchitect/" target="_blank">Facebook</a></li>
-					<li style={{marginTop:'15px'}} className={styles.nav_item}><a onClick={()=>this.switchLang()}>{localeLabel}</a></li>
-				</div>
-			)
-		}
-		else {
-			return (
-				<div style={{display:'flex'}}>
-
-					<li className={styles.nav_item}>
-						<a onClick={()=>this.switchLang()}>{localeLabel}</a>
-					</li>
-					<li className={styles.nav_item}>
-						<a href="https://www.instagram.com/mas.architecture/" target="_blank">
-							<img style={{height:'20px',margin:'0 -5px'}} src="/images/icon/social_insta.png"/>
-						</a>
-					</li>
-					<li className={styles.nav_item}>
-						<a href="https://www.facebook.com/masarchitect/" target="_blank">
-							<img style={{height:'20px',margin:'0 -5px'}} src="/images/icon/social_fb.png"/>
-						</a>
-					</li>
-				</div>
-			);
-		}
-	}
 	render() {
-		switch (this.props.mode) {
-			case 'desktop':
-				var container = styles.nav_bar_container;
-				break;
-			case 'mobile':
-				var container = styles.expanded_container;
-				break;
-			default:
-				var container = styles.expanded_container;
-		}
+		var localeLabel = (this.props.locale == 'vi')? 'english' : 'vietnamese';
 		return (
-			<ul className={container}>
+			<ul className={styles.nav_bar_container}>
 				<li className={styles.nav_item}><Link to="/about">{this.props.lang.about}</Link></li>
 				<li className={styles.nav_item}><Link to="/project_category">{this.props.lang.project}</Link></li>
 				<li className={styles.nav_item}><Link to="/blog">{this.props.lang.news}</Link></li>
 				<li className={styles.nav_item}><Link to="/contact">{this.props.lang.contact}</Link></li>
-				{this._renderSubMenu()}
+				<li className={styles.nav_item}>
+					<a onClick={()=>this.switchLang()}>{localeLabel}</a>
+				</li>
+				<li className={styles.nav_item}>
+					<a href="https://www.instagram.com/mas.architecture/" target="_blank">
+						<img style={{height:'20px',margin:'0 -5px'}} src="/images/icon/social_insta.png"/>
+					</a>
+				</li>
+				<li className={styles.nav_item}>
+					<a href="https://www.facebook.com/masarchitect/" target="_blank">
+						<img style={{height:'20px',margin:'0 -5px'}} src="/images/icon/social_fb.png"/>
+					</a>
+				</li>
+			</ul>
+		)
+	}
+}
+
+
+export class HeaderBarMobile extends React.Component {
+	switchLang() {
+		if (this.props.locale == 'vi'){
+			console.log('header bar items: ',this.props);
+			this.props.switchLang('en')
+		}
+		else this.props.switchLang('vi');
+	}
+	render() {
+		var localeLabel = (this.props.locale == 'vi')? 'english' : 'vietnamese';
+		return (
+			<ul className={styles.expanded_container}>
+				<li className={styles.nav_item}><Link to="/about">{this.props.lang.about}</Link></li>
+				<li className={styles.nav_item}><Link to="/project_category">{this.props.lang.project}</Link></li>
+				<li className={styles.nav_item}><Link to="/blog">{this.props.lang.news}</Link></li>
+				<li className={styles.nav_item}><Link to="/contact">{this.props.lang.contact}</Link></li>
+				<li style={{marginTop:'15px'}} className={styles.nav_item}><a href="https://www.instagram.com/mas.architecture/" target="_blank">Instagram</a></li>
+				<li className={styles.nav_item}><a href="https://www.facebook.com/masarchitect/" target="_blank">Facebook</a></li>
+				<li style={{marginTop:'15px'}} className={styles.nav_item}><a onClick={()=>this.switchLang()}>{localeLabel}</a></li>
 			</ul>
 		)
 	}

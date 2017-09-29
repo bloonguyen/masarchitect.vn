@@ -106,8 +106,7 @@ export default class General extends React.Component{
                 return(
                     <div className={styles.wrapper}>
                         <div className={styles.cover_container}>
-                            <SlideShow className={styles.slide_show}
-                                        images={item.hinh} />
+                            <SlideShow images={item.hinh} />
                         </div>
                         <div className={styles.intro_para}
                              dangerouslySetInnerHTML={{__html: item.noiDung}}>
