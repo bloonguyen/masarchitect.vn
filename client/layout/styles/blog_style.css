@@ -15,17 +15,16 @@
 	padding-left: 0px;
 }
 .content_wrapper{
+	margin-top: 20px;
 	display: flex;
-	width: 800px;
 	margin-left: auto;
     margin-right: auto;
-    border-bottom: solid 1px #e2e2e2;
+    max-width: 700px;
+    width: 80vw;
+
 }
-.breadscrumb{
-	max-width: 800px;
-	padding-left: 0px;
-	margin-bottom: 10px;
-}
+
+
 .publishedDate{
 	font-size: 12px;
 	color: #545454;
@@ -63,12 +62,6 @@
 }
 }
 
-.content_left h1{
-	marginTop: 10px;
-	fontSize: 5px;
-	fontWeight: bold;
-	fontFamily: HelveticaNeue-Light;
-}
 .content_right {
 	padding: 0px;
 }

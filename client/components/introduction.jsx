@@ -105,9 +105,6 @@ export default class General extends React.Component{
             if (this.props.locale == item.ngonNgu)
                 return(
                     <div className={styles.wrapper}>
-                        <div className={styles.cover_container}>
-                            <SlideShow images={item.hinh} />
-                        </div>
                         <div className={styles.intro_para}
                              dangerouslySetInnerHTML={{__html: item.noiDung}}>
                         </div>
@@ -121,44 +118,4 @@ export default class General extends React.Component{
             </div>
         );
     }
-}
-
-
-export class SlideShow extends React.Component {
-	_renderListPhoto() {
-        console.log("hinhne",this.props.images);
-		var nodeList = this.props.images.map((item,index)=> {
-            console.log("item",item);
-			if (item.url) {
-				// var url = cloudinaryModify(item.image.url,)
-				console.log('index: ',index);
-				if (index!==this.props.images.length-1) {
-					return (<div>
-						<img className={styles.carousel_img} src={item.url}/>
-					</div>)
-				}
-				else {
-					console.log('last item');
-					return (
-						<img className={styles.carousel_img} src={item.url}/>
-				)
-				}
-			}
-		})
-		return nodeList;
-	}
-	render() {
-
-		return (
-				<Carousel
-					dragging={false}
-					edgeEasing={null}
-					wrapAround={true}
-					autoplay={true}
-					autoplayInterval={7000}
-					>
-					{this._renderListPhoto()}
-				</Carousel>
-		)
-	}
 }

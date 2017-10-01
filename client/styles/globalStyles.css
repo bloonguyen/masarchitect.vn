@@ -31,7 +31,7 @@
 
 .breadscrumb * {
 	color: #505050;
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: 300;
 }
 
@@ -42,7 +42,6 @@
 
 .breadscrumb a:hover{
 	color: #000;
-	font-weight: 500;
 }
 
 /*@media only screen and (max-width: 700px) {

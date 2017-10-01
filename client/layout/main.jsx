@@ -127,7 +127,7 @@ export class HeaderBar extends React.Component {
 		}
 	}
 	render() {
-		var height = (this.state.navBarDropDown)? '250px' : '60px';
+		var height = (this.state.navBarDropDown)? '300px' : '60px';
 		return (
 			<div className={styles.header_container} style={{height:height}}>
 				<Link style={{alignSelf:'flex-start',marginTop:'10px'}} to="/"><img className={styles.header_logo} src="/images/logo/transparent_grey.png" /></Link>
@@ -151,9 +151,9 @@ export class HeaderBarDesktop extends React.Component {
 		var localeLabel = (this.props.locale == 'vi')? 'english' : 'vietnamese';
 		return (
 			<ul className={styles.nav_bar_container}>
-				<li className={styles.nav_item}><Link to="/about">{this.props.lang.about}</Link></li>
 				<li className={styles.nav_item}><Link to="/project_category">{this.props.lang.project}</Link></li>
 				<li className={styles.nav_item}><Link to="/blog">{this.props.lang.news}</Link></li>
+				<li className={styles.nav_item}><Link to="/about">{this.props.lang.about}</Link></li>
 				<li className={styles.nav_item}><Link to="/contact">{this.props.lang.contact}</Link></li>
 				<li className={styles.nav_item}>
 					<a onClick={()=>this.switchLang()}>{localeLabel}</a>
@@ -186,9 +186,9 @@ export class HeaderBarMobile extends React.Component {
 		var localeLabel = (this.props.locale == 'vi')? 'english' : 'vietnamese';
 		return (
 			<ul className={styles.expanded_container}>
-				<li className={styles.nav_item}><Link to="/about">{this.props.lang.about}</Link></li>
 				<li className={styles.nav_item}><Link to="/project_category">{this.props.lang.project}</Link></li>
 				<li className={styles.nav_item}><Link to="/blog">{this.props.lang.news}</Link></li>
+				<li className={styles.nav_item}><Link to="/about">{this.props.lang.about}</Link></li>
 				<li className={styles.nav_item}><Link to="/contact">{this.props.lang.contact}</Link></li>
 				<li style={{marginTop:'15px'}} className={styles.nav_item}><a href="https://www.instagram.com/mas.architecture/" target="_blank">Instagram</a></li>
 				<li className={styles.nav_item}><a href="https://www.facebook.com/masarchitect/" target="_blank">Facebook</a></li>

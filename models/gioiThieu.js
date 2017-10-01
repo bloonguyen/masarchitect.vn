@@ -21,7 +21,6 @@ gioiThieu.add({
 		],
 		label: 'Ngôn ngữ'
 	},
-	hinh: { type: Types.CloudinaryImages, label: 'Hình ảnh giới thiệu' },
 	noiDung: { type: Types.Html, wysiwyg: true , label: 'Nội dung' }
 });
 
