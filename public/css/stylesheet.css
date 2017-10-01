@@ -6,6 +6,13 @@ body {
     font-family: 'myHelvetica', sans-serif;
     min-height: 100vh;
     margin: 0;
+    font-weight: 300;
+    font-size: 13px;
+}
+
+body p {
+    letter-spacing: -0.02em;
+    line-height: 1.8em;
 }
 
 @font-face {
