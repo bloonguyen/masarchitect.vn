@@ -79,8 +79,8 @@
 }
 
 .profile_item {
-	width: 47vw;
-    height: 47vw;
+	width: 46vw;
+    height: 46vw;
 	max-width: 294px;
 	max-height: 294px;
     flex: 1;
@@ -91,7 +91,7 @@
 }
 
 .profile_title {
-   width: 47vw;
+   width: 46vw;
    max-width: 294px;
    text-transform: uppercase;
    font-weight: 500;
