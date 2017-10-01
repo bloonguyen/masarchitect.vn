@@ -97,6 +97,7 @@ export default class StaffCV extends React.Component {
     }
 	render() {
         console.log("Param",this.props.params.key);
+        var name = (this.props.locale == 'vi')? this.state.data.name : this.state.data.englishName;
         return (
             <MainLayout
                 switchLang={this.props.switchLang}
@@ -105,6 +106,8 @@ export default class StaffCV extends React.Component {
                     <Link to="/about">{this.state.lang.about}</Link>
                     <span style={{margin:'0 10px'}}> | </span>
                     <Link to={"/about/staff"}>{this.state.lang.staff}</Link>
+                    <span style={{margin:'0 10px'}}> | </span>
+                    <a style={{cursor:'normal'}}>{name}</a>
                 </div>
                 <NavBar>
                     <NavBarItem route={'/about/general'}>{this.state.lang.general}</NavBarItem>
