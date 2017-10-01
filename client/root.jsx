@@ -9,6 +9,7 @@ import ProjectCategory from 'client/layout/projectCategory.jsx';
 import AboutPage from 'client/layout/about.jsx';
 import ContactPage from 'client/layout/contact.jsx'
 import PostPage from 'client/layout/post.jsx';
+import StaffCVPage from 'client/layout/staffCV.jsx'
 
 class App extends React.Component {
     constructor(props) {
@@ -34,6 +35,10 @@ class App extends React.Component {
                     switchLang={this.switchLang.bind(this)} {...props}/>}/>
 
                 <Route path="/about/:type" component={(props) => <AboutPage
+                    locale={this.state.locale}
+                    switchLang={this.switchLang.bind(this)} {...props}/>}/>
+
+                <Route path="/ourteam/:key" component={(props) => <StaffCVPage
                     locale={this.state.locale}
                     switchLang={this.switchLang.bind(this)} {...props}/>}/>
 

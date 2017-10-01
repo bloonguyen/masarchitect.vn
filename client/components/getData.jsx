@@ -28,8 +28,7 @@ export default class AvailablePost extends React.Component {
 										<div style={{fontWeight:'500',marginBottom:'10px',textTransform:'uppercase'}}>
 											{this.props.data.tieuDe}
 										</div>
-										<p dangerouslySetInnerHTML={{__html: this.props.data.noiDung.tomTat}}>
-										</p>
+										<p> {this.props.data.noiDung.tomTat}</p>
 									</div>
 									<p style ={{color:'#828282',marginBottom:'0'}}>{parsedDate}</p>
 								</div>
