@@ -37,6 +37,7 @@ exports = module.exports = function(app) {
 	app.get('/project_category/', routes.views.blog);
 	app.get('/about', routes.views.blog);
 	app.get('/about/:type', routes.views.blog);
+	app.get('/ourteam/:key', routes.views.blog);
 	app.get('/contact',routes.views.blog);
 
 
@@ -52,6 +53,7 @@ exports = module.exports = function(app) {
 	app.get('/api/our_team',routes.api.ourTeam);
 	app.get('/api/slide/:type',routes.api.slide);
 	app.get('/api/about',routes.api.about);
+	app.get('/api/ourteam/:key',routes.api.personDetail);
 	// app.get('*', routes.views.blog);
 
 };
