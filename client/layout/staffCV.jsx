@@ -63,8 +63,33 @@ export default class StaffCV extends React.Component {
         this.fetchCVFromServer();
     }
     _renderCV(){
-        console.log(this.state.data);
-        return null;
+        var vaitro = this.props.locale == 'vi' ? this.state.data.vaiTroTiengViet : this.state.data.vaiTroTiengAnh;
+        var giaithich = this.props.locale == 'vi' ? this.state.data.giaiThichTiengViet : this.state.data.giaiThichTiengAnh;
+        var anhDaiDien = this.state.data.anhDaiDien ? this.state.data.anhDaiDien.url : null ;
+        return(
+            <div className={globalStyles.main_flex_container}>
+                <div className={styles.content_wrapper}>
+                    <div className={globalStyles.col_4}>
+                        <div className={styles.content_right}>
+                                <img src={anhDaiDien}/>
+                        </div>
+                    </div>
+                    <div className={globalStyles.col_8}>
+                            <div className={styles.content_left}>
+                                <div className={styles.text_board}>
+                                    <div>
+                                        <div style={{fontWeight:'500',marginBottom:'10px',textTransform:'uppercase'}}>
+                                            {vaitro}
+                                        </div>
+                                        <p dangerouslySetInnerHTML={{__html: giaithich}}>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        )
     }
 	render() {
         console.log("Param",this.props.params.key);
@@ -85,41 +110,5 @@ export default class StaffCV extends React.Component {
                 <div className={globalStyles.content_board}>{this._renderCV()}</div>
             </MainLayout>
         );
-	}
-}
-
-export class Post extends React.Component {
-	render() {
-	//	var date = (this.props.data.ngayDang)? new Date(this.props.data.ngayDang): new Date();
-		var date = new Date();
-		var youtubeUrl = (this.props.data.youtubeLink)? this.props.data.youtubeLink : '';
-		youtubeUrl = youtubeUrl.replace("watch?v=","embed/")
-		var parsedDate = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
-		var content = (this.props.data.noiDung)? this.props.data.noiDung.dayDu : '';
-		var url = (this.props.data.hinhDaiDien)? (this.props.data.hinhDaiDien.url) : '';
-		var youtubeEmbeded = (this.props.data.youtubeLink)? (
-			<div className={styles.youtube_wrapper}>
-				<Iframe url={youtubeUrl} frameborder="0" width="100%" height="100%" display="block" position="absolute" allowfullscreen="true"></Iframe>
-			</div>
-		) : null;
-		return (
-			<div className={globalStyles.main_flex_container}>
-				<div className={styles.content_wrapper} style={{display:'initial'}}>
-						<div className={styles.content_left_wrapper}>
-							<div className={styles.title} style={{textTransform:'uppercase'}}>
-								{this.props.data.tieuDe}
-							</div>
-							<p className={styles.publishedDate}>
-								{parsedDate}</p>
-						</div>
-						<div className={styles.content_right}>
-						{youtubeEmbeded}
-							<p className={styles.title} style={{fontSize:'13px',fontWeight:'300'}}
-								dangerouslySetInnerHTML={{__html: content}}>
-							</p>
-						</div>
-				</div>
-			</div>
-		)
 	}
 }
