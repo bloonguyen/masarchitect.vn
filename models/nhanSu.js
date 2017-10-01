@@ -19,8 +19,8 @@ nhanSu.add({
 	], label: 'Chức vụ'},
 	vaiTroTiengViet:{type: String, label:'Vai trò tiếng Việt'},
 	vaiTroTiengAnh:{type: String, label:'Vai trò tiếng Anh'},
-	CVTiengAnh: { type: Types.Html, wysiwyg: true , label: 'CV tiếng Việt' },
-	CVTiengViet: { type: Types.Html, wysiwyg: true , label: 'CV tiếng Anh' },
+	CVTiengAnh: { type: Types.Html, wysiwyg: true , label: 'CV tiếng Anh' },
+	CVTiengViet: { type: Types.Html, wysiwyg: true , label: 'CV tiếng Việt' },
 	anhDaiDien: { type: Types.CloudinaryImage },
 });
 

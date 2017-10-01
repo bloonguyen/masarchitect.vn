@@ -57,7 +57,7 @@ export default class OurTeam extends React.Component {
 		return (
 			<div className={styles.our_team_container}>
 				<div className={styles.boss_container}>
-				<Link to={"/ourteam/"+person}>
+				<Link to={"/ourteam/"+person} style={{textDecoration:'none	'}}>
 					<div>
 						<div className={gridStyles.profile_item}
 							style={{backgroundImage:'url('+url+')'}}>

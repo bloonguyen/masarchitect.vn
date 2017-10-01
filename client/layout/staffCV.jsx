@@ -63,8 +63,9 @@ export default class StaffCV extends React.Component {
         this.fetchCVFromServer();
     }
     _renderCV(){
+        var ten = this.props.locale == 'vi' ? this.state.data.name : this.state.data.englishName;
         var vaitro = this.props.locale == 'vi' ? this.state.data.vaiTroTiengViet : this.state.data.vaiTroTiengAnh;
-        var giaithich = this.props.locale == 'vi' ? this.state.data.giaiThichTiengViet : this.state.data.giaiThichTiengAnh;
+        var giaithich = this.props.locale == 'vi' ? this.state.data.CVTiengViet : this.state.data.CVTiengAnh;
         var anhDaiDien = this.state.data.anhDaiDien ? this.state.data.anhDaiDien.url : null ;
         return(
             <div className={globalStyles.main_flex_container}>
@@ -79,6 +80,9 @@ export default class StaffCV extends React.Component {
                                 <div className={styles.text_board}>
                                     <div>
                                         <div style={{fontWeight:'500',marginBottom:'10px',textTransform:'uppercase'}}>
+                                            {ten}
+                                        </div>
+                                        <div style={{fontWeight:'400',marginBottom:'10px'}}>
                                             {vaitro}
                                         </div>
                                         <p dangerouslySetInnerHTML={{__html: giaithich}}>

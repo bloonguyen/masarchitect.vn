@@ -42,23 +42,25 @@ export default class ItemGrid extends React.Component {
 					var url = (item.anhDaiDien)? cloudinaryModify(item.anhDaiDien.url,'w_512'):null;
 					if (this.props.locale =="vi") {
 						var name = item.name;
-						var description = item.giaiThichTiengViet;
+						var description = item.vaiTroTiengViet;
 					}
 					else {
 						var name = item.englishName;
-						var description = item.giaiThichTiengAnh;
+						var description = item.vaiTroTiengAnh;
 					}
 					return (
-						<li className={styles.item_container}
-							key={index}>
-								<div className={styles.profile_item}
-									style={{backgroundImage:'url('+url+')'}}>
-								</div>
-								<div className={styles.profile_title}>
-									{name}
-								</div>
-								<div className={styles.profile_description}>{description}</div>
-						</li>
+						<Link to={"/ourteam/"+item.key} style={{textDecoration:'none'}} >
+							<li className={styles.item_container}
+								key={index}>
+									<div className={styles.profile_item}
+										style={{backgroundImage:'url('+url+')'}}>
+									</div>
+									<div className={styles.profile_title}>
+										{name}
+									</div>
+									<div className={styles.profile_description}>{description}</div>
+							</li>
+						</Link>
 					)
 				});
 				return nodeList;
