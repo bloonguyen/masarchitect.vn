@@ -44,7 +44,14 @@ font-weight: 700;
 .slider-list {
     min-height: 100vh;
 }
-
+@media only screen and (max-width: 768px) {
+    div[class*="ril-toolbar"] {
+        display: none;
+    }
+    button[class*="navButtons"] {
+        display: none;
+    }
+}
 #app-body {
     min-height: 100vh;
     margin: 0;

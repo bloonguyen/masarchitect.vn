@@ -6,6 +6,7 @@ exports = module.exports = function (req, res) {
 	console.log('params ====> ',req.params.name);
 	if (!req.params.name) {
 		loaiCongTrinh.model.find()
+			.sort('order')
 			.exec(function(err,results) {
 				res.json(results);
 			})
@@ -20,6 +21,7 @@ exports = module.exports = function (req, res) {
 		else {
 			loaiCongTrinh.model.findOne()
 			.where('key',req.params.name)
+			.sort('order')
 			.exec(function(err,category) {
 				console.log('project category ====>',category,category.id);
 
