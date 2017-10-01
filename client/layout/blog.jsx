@@ -48,7 +48,7 @@ export default class BlogPage extends React.Component {
 					<div className={globalStyles.breadscrumb}>
 						<Link to="/blog">{blog}</Link>
 					</div>
-					{nodeList}
+					<div className={globalStyles.content_board}>{nodeList}</div>
 				</MainLayout>
 		)
 	}

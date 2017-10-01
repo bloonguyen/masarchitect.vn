@@ -86,7 +86,6 @@
     flex: 1;
 	position: relative;
 	background-size: cover;
-	filter: grayscale(.7);
 }
 
 .profile_title {

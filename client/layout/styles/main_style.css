@@ -97,22 +97,24 @@
 .footer_container {
 	background-color: #fff;
 	max-width: 1200px;
+	font-weight: 300;
+	font-size: 13px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .footer_container h1 {
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 1.42857143;
-	font-weight: 400;
 	margin: 0;
 	padding: 0;
+	font-weight: 300;
 }
 
 .footer_container h2 {
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 1.42857143;
-	font-weight: 400;
+	font-weight: 300;
 	margin: 0;
 	padding: 0;
 }

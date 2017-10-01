@@ -34,7 +34,7 @@ export default class ItemGrid extends React.Component {
 							</Link>
 						</li>
 					)
-				})
+				});
 				return nodeList;
 
 			case "profile":
@@ -60,9 +60,29 @@ export default class ItemGrid extends React.Component {
 								<div className={styles.profile_description}>{description}</div>
 						</li>
 					)
-				})
+				});
 				return nodeList;
-
+			case "press":
+				nodeList = this.props.data.map((item,index) => {
+					var url = (item.hinhDaiDien)? cloudinaryModify(item.hinhDaiDien.url,'w_512'):"/images/img_holder.jpg";
+					if (item.kieu == "press") {
+						return (
+							<li className={styles.item_container}
+								key={index}>
+								<Link to={"/post/"+item.slug}>
+									<div className={styles.profile_item}
+										style={{backgroundImage:'url('+url+')'}}>
+									</div>
+									<div className={styles.profile_title}>
+										{item.tieuDe}
+									</div>
+									<div className={styles.profile_description}>{item.noiDung.tomTat}</div>
+								</Link>
+							</li>
+						)
+					}
+				});
+				return nodeList;
 			default:
 		}
 	}

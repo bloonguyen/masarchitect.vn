@@ -89,7 +89,7 @@ export default class AboutPage extends React.Component{
                     <NavBarItem route={'/about/staff'}>{this.state.lang.staff}</NavBarItem>
                     <NavBarItem route={'/about/press'}>{this.state.lang.press}</NavBarItem>
                 </NavBar>
-                {this._renderAbout()}
+                <div className={globalStyles.content_board}>{this._renderAbout()}</div>
             </MainLayout>
         );
     }

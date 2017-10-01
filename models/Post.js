@@ -33,7 +33,7 @@ Post.add({
 	ngayDang: { type: Types.Date, index: true, dependsOn: { state: 'published' }, label:'Ngày đăng' },
 	hinhDaiDien: { type: Types.CloudinaryImage, label: 'Hình đại diện' },
 	noiDung: {
-		tomTat: { type: Types.Html, wysiwyg: true, height: 150, label: 'Tóm tắt' },
+		tomTat: { type: Types.Textarea, wysiwyg: true, height: 150, label: 'Tóm tắt' },
 		dayDu: { type: Types.Html, wysiwyg: true, height: 400, label: 'Đầy đủ' },
 	},
 });

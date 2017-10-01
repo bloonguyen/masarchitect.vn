@@ -7,6 +7,9 @@
     justify-content: space-between;
 }
 
+.content_board {
+	margin: 20px 0;
+}
 
 .main_flex_container {
 	display: flex;

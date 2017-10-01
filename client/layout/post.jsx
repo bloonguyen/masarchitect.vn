@@ -44,7 +44,9 @@ export default class PostPage extends React.Component {
 						<Link to="/blog">{blog}</Link>
 						{this._renderPostLink()}
 					</div>
-					<Post data={this.state.data} />
+					<div className={globalStyles.content_board}>
+						<Post data={this.state.data} />
+					</div>
 				</MainLayout>
 		)
 	}
