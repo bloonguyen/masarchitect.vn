@@ -47,7 +47,7 @@
 
 
 .project_item {
-	/*width: 45vw;*/
+	/*width: 47vw;*/
     height: 27vw;
 	max-width: 320px;
 	max-height: 192px;
@@ -79,17 +79,19 @@
 }
 
 .profile_item {
-	width: 45vw;
-    height: 45vw;
+	width: 47vw;
+    height: 47vw;
 	max-width: 294px;
 	max-height: 294px;
     flex: 1;
 	position: relative;
 	background-size: cover;
+	margin:1px;
+	margin-bottom: 10px;
 }
 
 .profile_title {
-   width: 45vw;
+   width: 47vw;
    max-width: 294px;
    text-transform: uppercase;
    font-weight: 500;
@@ -103,6 +105,8 @@
 	font-weight: 300;
 	letter-spacing: -0.01em;
     color: #505050;
+	width: 47vw;
+    max-width: 294px;
 }
 
 
