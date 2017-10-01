@@ -9,6 +9,8 @@ keystone.init({
 	'views': 'templates/views',
 	'view engine': 'ejs',
 	'custom engine': require('ejs').__express,
+	'wysiwyg additional options': { 'external_plugins': { 'uploadimage': '/js/uploadimage/plugin.min.js' } },
+	'wysiwyg cloudinary images': true,
 	'wysiwyg additional buttons':'removeformat | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code',
 	'wysiwyg override toolbar':true,
 	'auto update': true,
