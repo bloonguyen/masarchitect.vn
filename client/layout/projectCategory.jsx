@@ -104,7 +104,7 @@ export default class ProjectCategory extends React.Component {
 				</NavBarItem>
 			);
 		});
-		var allText = (this.props.locale == 'vi')? 'Tất cả': 'All Projects'
+		var allText = (this.props.locale == 'vi')? 'Tất cả': 'All'
 		console.log("lang",this.state.lang.portfolio);
 		return (
 			<MainLayout
