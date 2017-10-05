@@ -23,6 +23,8 @@ const en = {
 	contact: "contact"
 }
 
+const myWindow = (typeof window !== "undefined")? window : {}
+
 export default class IndexPage extends React.Component {
 	constructor(props) {
 		super(props);
@@ -33,7 +35,7 @@ export default class IndexPage extends React.Component {
 		}
 	}
 	fetchSlidePhotoFromServer() {
-		var portrait = window.matchMedia("(orientation: portrait)");
+		var portrait = (typeof window !== "undefined")? myWindow.matchMedia("(orientation: portrait)"): {matches:true};
 		var orientation = (portrait.matches)? 'portrait' : 'landscape';
 		console.log('portrait: ',portrait);
 		fetch('/api/slide/'+orientation, {
@@ -105,8 +107,10 @@ export default class IndexPage extends React.Component {
 
 export class SlideShow extends React.Component {
 	_renderListPhoto() {
-		var size = (window.outerWidth > window.outerHeight)? window.outerWidth : window.outerHeight;
-		var resizeParam = 'w_'+size.toString();
+		var size = (myWindow.outerWidth > myWindow.outerHeight)? myWindow.outerWidth : myWindow.outerHeight;
+		if (size) {
+			var resizeParam = 'w_'+size.toString();
+		}
 		var nodeList = this.props.images.map((item,index)=> {
 			if (item.image.url) {
 				// var url = cloudinaryModify(item.image.url,)

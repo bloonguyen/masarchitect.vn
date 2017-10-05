@@ -1,8 +1,8 @@
 var keystone = require('keystone');
-var loaiCongTrinh = keystone.list('loaiCongTrinh');
-var congTrinh = keystone.list('congTrinh');
 
 exports = module.exports = function (req, res) {
+	var loaiCongTrinh = keystone.lists['loaiCongTrinh'];
+	var congTrinh = keystone.lists['congTrinh'];
 	console.log('params ====> ',req.params.name);
 	if (!req.params.name) {
 		loaiCongTrinh.model.find()

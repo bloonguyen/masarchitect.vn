@@ -1,6 +1,6 @@
 var keystone = require('keystone');
-var congTrinh = keystone.list('congTrinh');
-var loaiCongTrinh = keystone.list('loaiCongTrinh');
+var congTrinh = keystone.lists['congTrinh'];
+var loaiCongTrinh = keystone.lists['loaiCongTrinh'];
 
 exports = module.exports = function (req, res) {
 	console.log('params ====> ',req.params.name);

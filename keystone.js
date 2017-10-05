@@ -1,4 +1,27 @@
+var fs = require('fs');
+var path = require('path');
 var keystone = require('keystone');
+var express = require('express');
+var bundle = require('./public/bundle/server.js');
+var api = require('./routes/api.js');
+var app = new express();
+/********************Config Cloudinary***********/
+keystone.set('cloudinary config', { cloud_name: 'masarchitect', api_key: '594464416512535', api_secret: 'C6AAoOxpSmGRu9KLn4nPNYh7pEc' });
+
+// optional, will prefix each image public_id with {list.path}/{field.path}/
+keystone.set('cloudinary folders', true);
+
+// optional, will force cloudinary to serve images over https
+// keystone.set('cloudinary secure', true);
+/********************Config Cloudinary End***********/
+keystone.import('models');
+
+
+
+// Load your project's Models
+keystone.set('app', app);
+keystone.set('routes', app);
+
 
 keystone.init({
 	'name': 'masArchitecture',
@@ -18,34 +41,25 @@ keystone.init({
 
 });
 
-/********************Config Cloudinary***********/
-keystone.set('cloudinary config', { cloud_name: 'masarchitect', api_key: '594464416512535', api_secret: 'C6AAoOxpSmGRu9KLn4nPNYh7pEc' });
-
-// optional, will prefix each image public_id with {list.path}/{field.path}/
-keystone.set('cloudinary folders', true);
-
-// optional, will force cloudinary to serve images over https
-// keystone.set('cloudinary secure', true);
-/********************Config Cloudinary End***********/
-
-// Load your project's Models
-keystone.import('models');
-
 // Setup common locals for your templates. The following are required for the
 // bundled templates and layouts. Any runtime locals (that should be set uniquely
 // for each request) should be added to ./routes/middleware.js
 keystone.set('locals', {
 	_: require('underscore'),
-	env: keystone.get('env'),
+	e1nv: keystone.get('env'),
 	utils: keystone.utils,
 	editable: keystone.content.editable
 });
 
 
-
+keystone.initDatabaseConfig();
+keystone.initExpressSession();
 
 // Load your project's Routes
-keystone.set('routes', require('./routes'));
+// keystone.set('routes', require('./routes'));
+app.use(express.static('./public'));
+app.use('/api',api);
+app.use('/',bundle);
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
@@ -60,4 +74,10 @@ keystone.set('nav', {
 
 
 // Start Keystone to connect to your database and initialise the web server
-keystone.start();
+keystone.openDatabaseConnection(function () {
+	var server = app.listen(process.env.PORT || 3000, function () {
+		console.log('-------------------------------');
+		console.log('Express server ready on port %d', server.address().port);
+		console.log('-------------------------------');
+	});
+});

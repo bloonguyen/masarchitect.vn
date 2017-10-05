@@ -24,20 +24,25 @@ var routes = {
 	views: importRoutes('./views'),
 	api: importRoutes('./api')
 };
+
+var bundle = require('../public/bundle/server.js')
+
 // Setup Route Bindings
 exports = module.exports = function(app) {
 
 
 	// Views
-	app.get('/', routes.views.index);
-	app.get('/blog', routes.views.blog);
-	app.get('/post/:key',routes.views.blog);
-	app.get('/project/:name', routes.views.blog);
-	app.get('/project_category/:name', routes.views.blog);
-	app.get('/project_category/', routes.views.blog);
-	app.get('/about', routes.views.blog);
-	app.get('/about/:type', routes.views.blog);
-	app.get('/contact',routes.views.blog);
+
+	// app.get('/', routes.views.index);
+	// app.get('/blog', routes.views.blog);
+	// app.get('/post/:key',routes.views.blog);
+	// app.get('/project/:name', routes.views.blog);
+	// app.get('/project_category/:name', routes.views.blog);
+	// app.get('/project_category/', routes.views.blog);
+	// app.get('/about', routes.views.blog);
+	// app.get('/about/:type', routes.views.blog);
+	// app.get('/ourteam/:key', routes.views.blog);
+	// app.get('/contact',routes.views.blog);
 
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
@@ -52,5 +57,5 @@ exports = module.exports = function(app) {
 	app.get('/api/our_team',routes.api.ourTeam);
 	app.get('/api/slide/:type',routes.api.slide);
 	// app.get('*', routes.views.blog);
-
+	app.get('*',bundle(req,res));
 };

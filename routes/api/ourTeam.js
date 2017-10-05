@@ -1,7 +1,7 @@
 var keystone = require('keystone');
-var nhanSu = keystone.list('nhanSu');
 
 exports = module.exports = function (req, res) {
+	var nhanSu = keystone.lists['nhanSu'];
 	nhanSu.model.find()
 		.exec(function(err,results) {
 			res.json(results);

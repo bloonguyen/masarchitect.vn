@@ -16,6 +16,8 @@ const en = {
 	portfolio: 'portfolio'
 }
 
+const myWindow = (typeof window !== "undefined")? window : {};
+
 export default class ProjectPage extends React.Component {
 	constructor(props) {
 		super(props);
@@ -94,7 +96,7 @@ export class ProjectUnit extends React.Component {
             return <div>{i}</div>;
         });
 		var cols;
-		var width = window.innerWidth;
+		var width = myWindow.innerWidth;
 			if (width<600) {
 				cols = 2;
 			}

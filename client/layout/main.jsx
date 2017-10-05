@@ -21,6 +21,8 @@ const en = {
 	address: '189 Thanh Thuy Hai Chau District, Da Nang City, Vietnam'
 }
 
+const myWindow = (typeof window !== "undefined")? window : {};
+
 export default class MainLayout extends React.Component {
 	constructor(props) {
 		super(props);
@@ -71,21 +73,21 @@ export class HeaderBar extends React.Component {
 	}
 	updateDimensions() {
 		console.log('update dimension');
-		if (window.innerWidth < 750) {
+		if (mymyWindow.innerWidth < 750) {
 			this.setState({mobileMode:true});
 		}
 		else { this.setState({mobileMode:false})}
 	}
 	componentDidMount() {
-		window.addEventListener("resize", this.updateDimensions.bind(this));
+		myWindow.addEventListener("resize", this.updateDimensions.bind(this));
 		console.log('update dimension');
-		if (window.innerWidth < 750) {
+		if (myWindow.innerWidth < 750) {
 			this.setState({mobileMode:true});
 		}
 		else { this.setState({mobileMode:false})}
 	}
 	componentWillUnmount() {
-		window.removeEventListener("resize", this.updateDimensions.bind(this));
+		myWindow.removeEventListener("resize", this.updateDimensions.bind(this));
 	}
 	handleDropDownNavBar() {
 		this.setState({navBarDropDown:!this.state.navBarDropDown})
