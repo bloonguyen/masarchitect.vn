@@ -58,11 +58,15 @@ keystone.set('locals', {
 
 keystone.initDatabaseConfig();
 keystone.initExpressSession();
-
+app.use(keystone.get('session options').cookieParser);
+app.use(keystone.expressSession);
+app.use(keystone.session.persist);
 // Load your project's Routes
 // keystone.set('routes', require('./routes'));
 app.use(express.static('./public'));
 app.use('/api',api);
+app.use('/keystone', keystone.Admin.Server.createStaticRouter(keystone));
+app.use('/keystone', keystone.Admin.Server.createDynamicRouter(keystone));
 app.use('/',bundle);
 
 // Configure the navigation bar in Keystone's Admin UI
