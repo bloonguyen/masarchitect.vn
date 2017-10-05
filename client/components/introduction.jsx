@@ -4,7 +4,6 @@ import {Link, browserHistory} from 'react-router';
 import globalStyles from 'client/styles/globalStyles.css';
 import styles from 'client/layout/styles/about_style.css';
 import Carousel from 'nuka-carousel';
-import { CloudinaryContext, Transformation, Image } from 'cloudinary-react';
 
 const vi = {
     intro: 'Giới thiệu',

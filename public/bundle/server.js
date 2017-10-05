@@ -64,7 +64,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/bundle/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 37);
+/******/ 	return __webpack_require__(__webpack_require__.s = 36);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -90,7 +90,7 @@ module.exports = require("react-dom");
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    var content = __webpack_require__(46);
+    var content = __webpack_require__(45);
     var insertCss = __webpack_require__(6);
 
     if (typeof content === 'string') {
@@ -683,11 +683,11 @@ module.exports = global.fetch;
 "use strict";
 
 
-var _stringify = __webpack_require__(49);
+var _stringify = __webpack_require__(48);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
-var _slicedToArray2 = __webpack_require__(50);
+var _slicedToArray2 = __webpack_require__(49);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -1295,7 +1295,7 @@ var FooterBar = exports.FooterBar = function (_React$Component5) {
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    var content = __webpack_require__(42);
+    var content = __webpack_require__(41);
     var insertCss = __webpack_require__(6);
 
     if (typeof content === 'string') {
@@ -1781,7 +1781,7 @@ exports.default = AvailablePost;
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    var content = __webpack_require__(38);
+    var content = __webpack_require__(37);
     var insertCss = __webpack_require__(6);
 
     if (typeof content === 'string') {
@@ -1816,7 +1816,7 @@ exports.default = AvailablePost;
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    var content = __webpack_require__(39);
+    var content = __webpack_require__(38);
     var insertCss = __webpack_require__(6);
 
     if (typeof content === 'string') {
@@ -1851,7 +1851,7 @@ exports.default = AvailablePost;
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    var content = __webpack_require__(41);
+    var content = __webpack_require__(40);
     var insertCss = __webpack_require__(6);
 
     if (typeof content === 'string') {
@@ -1886,7 +1886,7 @@ exports.default = AvailablePost;
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    var content = __webpack_require__(44);
+    var content = __webpack_require__(43);
     var insertCss = __webpack_require__(6);
 
     if (typeof content === 'string') {
@@ -1921,7 +1921,7 @@ exports.default = AvailablePost;
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    var content = __webpack_require__(45);
+    var content = __webpack_require__(44);
     var insertCss = __webpack_require__(6);
 
     if (typeof content === 'string') {
@@ -1955,22 +1955,16 @@ exports.default = AvailablePost;
 /* 19 */
 /***/ (function(module, exports) {
 
-module.exports = require("cloudinary-react");
+module.exports = require("nuka-carousel");
 
 /***/ }),
 /* 20 */
 /***/ (function(module, exports) {
 
-module.exports = require("nuka-carousel");
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports) {
-
 module.exports = require("react-iframe");
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1986,35 +1980,35 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _reactRouter = __webpack_require__(1);
 
-var _index = __webpack_require__(32);
+var _index = __webpack_require__(31);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _blog = __webpack_require__(30);
+var _blog = __webpack_require__(29);
 
 var _blog2 = _interopRequireDefault(_blog);
 
-var _project = __webpack_require__(34);
+var _project = __webpack_require__(33);
 
 var _project2 = _interopRequireDefault(_project);
 
-var _projectCategory = __webpack_require__(35);
+var _projectCategory = __webpack_require__(34);
 
 var _projectCategory2 = _interopRequireDefault(_projectCategory);
 
-var _about = __webpack_require__(29);
+var _about = __webpack_require__(28);
 
 var _about2 = _interopRequireDefault(_about);
 
-var _contact = __webpack_require__(31);
+var _contact = __webpack_require__(30);
 
 var _contact2 = _interopRequireDefault(_contact);
 
-var _post = __webpack_require__(33);
+var _post = __webpack_require__(32);
 
 var _post2 = _interopRequireDefault(_post);
 
-var _staffCV = __webpack_require__(36);
+var _staffCV = __webpack_require__(35);
 
 var _staffCV2 = _interopRequireDefault(_staffCV);
 
@@ -2036,7 +2030,7 @@ exports = module.exports = _react2.default.createElement(
 );
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2051,13 +2045,13 @@ exports.default = function (html) {
 };
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2087,11 +2081,9 @@ var _about_style = __webpack_require__(16);
 
 var _about_style2 = _interopRequireDefault(_about_style);
 
-var _nukaCarousel = __webpack_require__(20);
+var _nukaCarousel = __webpack_require__(19);
 
 var _nukaCarousel2 = _interopRequireDefault(_nukaCarousel);
-
-var _cloudinaryReact = __webpack_require__(19);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2236,7 +2228,7 @@ exports.default = General;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2266,7 +2258,7 @@ var _itemGrid_style = __webpack_require__(14);
 
 var _itemGrid_style2 = _interopRequireDefault(_itemGrid_style);
 
-var _ourTeam_style = __webpack_require__(47);
+var _ourTeam_style = __webpack_require__(46);
 
 var _ourTeam_style2 = _interopRequireDefault(_ourTeam_style);
 
@@ -2388,7 +2380,7 @@ exports.default = OurTeam;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2408,11 +2400,11 @@ var _reactDom = __webpack_require__(2);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactPhotoGallery = __webpack_require__(52);
+var _reactPhotoGallery = __webpack_require__(51);
 
 var _reactPhotoGallery2 = _interopRequireDefault(_reactPhotoGallery);
 
-var _reactImageLightbox = __webpack_require__(51);
+var _reactImageLightbox = __webpack_require__(50);
 
 var _reactImageLightbox2 = _interopRequireDefault(_reactImageLightbox);
 
@@ -2503,7 +2495,7 @@ var PhotoGrid = function (_React$Component) {
 exports.default = PhotoGrid;
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2605,7 +2597,7 @@ exports.default = Press;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2639,15 +2631,15 @@ var _navBarItem = __webpack_require__(12);
 
 var _navBarItem2 = _interopRequireDefault(_navBarItem);
 
-var _ourTeam = __webpack_require__(26);
+var _ourTeam = __webpack_require__(25);
 
 var _ourTeam2 = _interopRequireDefault(_ourTeam);
 
-var _introduction = __webpack_require__(25);
+var _introduction = __webpack_require__(24);
 
 var _introduction2 = _interopRequireDefault(_introduction);
 
-var _press = __webpack_require__(28);
+var _press = __webpack_require__(27);
 
 var _press2 = _interopRequireDefault(_press);
 
@@ -2799,7 +2791,7 @@ var AboutPage = function (_React$Component) {
 exports.default = AboutPage;
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2926,7 +2918,7 @@ exports.default = BlogPage;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2952,7 +2944,7 @@ var _main = __webpack_require__(7);
 
 var _main2 = _interopRequireDefault(_main);
 
-var _reactIframe = __webpack_require__(21);
+var _reactIframe = __webpack_require__(20);
 
 var _reactIframe2 = _interopRequireDefault(_reactIframe);
 
@@ -3093,7 +3085,7 @@ var ContactPage = function (_React$Component) {
 exports.default = ContactPage;
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3116,17 +3108,15 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _reactRouter = __webpack_require__(1);
 
-var _nukaCarousel = __webpack_require__(20);
+var _nukaCarousel = __webpack_require__(19);
 
 var _nukaCarousel2 = _interopRequireDefault(_nukaCarousel);
-
-var _cloudinaryReact = __webpack_require__(19);
 
 var _globalStyles = __webpack_require__(3);
 
 var _globalStyles2 = _interopRequireDefault(_globalStyles);
 
-var _index_style = __webpack_require__(48);
+var _index_style = __webpack_require__(47);
 
 var _index_style2 = _interopRequireDefault(_index_style);
 
@@ -3459,7 +3449,7 @@ var CoverMenuItem = exports.CoverMenuItem = function (_React$Component5) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 33 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3494,7 +3484,7 @@ var _main = __webpack_require__(7);
 
 var _main2 = _interopRequireDefault(_main);
 
-var _reactIframe = __webpack_require__(21);
+var _reactIframe = __webpack_require__(20);
 
 var _reactIframe2 = _interopRequireDefault(_reactIframe);
 
@@ -3643,7 +3633,7 @@ var Post = exports.Post = function (_React$Component2) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 34 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3678,7 +3668,7 @@ var _main = __webpack_require__(7);
 
 var _main2 = _interopRequireDefault(_main);
 
-var _photoGrid = __webpack_require__(27);
+var _photoGrid = __webpack_require__(26);
 
 var _photoGrid2 = _interopRequireDefault(_photoGrid);
 
@@ -3917,7 +3907,7 @@ ProjectUnit.defaultProps = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4150,7 +4140,7 @@ exports.default = ProjectCategory;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4397,7 +4387,7 @@ exports.default = StaffCV;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4407,17 +4397,17 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(24);
+var _server = __webpack_require__(23);
 
 var _server2 = _interopRequireDefault(_server);
 
-var _template = __webpack_require__(23);
+var _template = __webpack_require__(22);
 
 var _template2 = _interopRequireDefault(_template);
 
 var _reactRouter = __webpack_require__(1);
 
-var _routes = __webpack_require__(22);
+var _routes = __webpack_require__(21);
 
 var _routes2 = _interopRequireDefault(_routes);
 
@@ -4440,7 +4430,7 @@ exports = module.exports = function (req, res) {
 };
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(undefined);
@@ -4465,7 +4455,7 @@ exports.locals = {
 };
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(undefined);
@@ -4483,7 +4473,7 @@ exports.locals = {
 };
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(undefined);
@@ -4500,7 +4490,7 @@ exports.locals = {
 };
 
 /***/ }),
-/* 41 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(undefined);
@@ -4522,7 +4512,7 @@ exports.locals = {
 };
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(undefined);
@@ -4546,7 +4536,7 @@ exports.locals = {
 };
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(undefined);
@@ -4571,7 +4561,7 @@ exports.locals = {
 };
 
 /***/ }),
-/* 44 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(undefined);
@@ -4600,7 +4590,7 @@ exports.locals = {
 };
 
 /***/ }),
-/* 45 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(undefined);
@@ -4622,7 +4612,7 @@ exports.locals = {
 };
 
 /***/ }),
-/* 46 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(undefined);
@@ -4653,11 +4643,11 @@ exports.locals = {
 };
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    var content = __webpack_require__(40);
+    var content = __webpack_require__(39);
     var insertCss = __webpack_require__(6);
 
     if (typeof content === 'string') {
@@ -4688,11 +4678,11 @@ exports.locals = {
   
 
 /***/ }),
-/* 48 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    var content = __webpack_require__(43);
+    var content = __webpack_require__(42);
     var insertCss = __webpack_require__(6);
 
     if (typeof content === 'string') {
@@ -4723,25 +4713,25 @@ exports.locals = {
   
 
 /***/ }),
-/* 49 */
+/* 48 */
 /***/ (function(module, exports) {
 
 module.exports = require("babel-runtime/core-js/json/stringify");
 
 /***/ }),
-/* 50 */
+/* 49 */
 /***/ (function(module, exports) {
 
 module.exports = require("babel-runtime/helpers/slicedToArray");
 
 /***/ }),
-/* 51 */
+/* 50 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-image-lightbox");
 
 /***/ }),
-/* 52 */
+/* 51 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-photo-gallery");
