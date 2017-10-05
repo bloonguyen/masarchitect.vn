@@ -1,5 +1,6 @@
 html {
     min-height: 100%;
+    overflow-y: scroll;
 }
 
 body {
@@ -44,7 +45,7 @@ font-weight: 700;
 .slider-list {
     min-height: 100vh;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1025px) {
     div[class*="ril-toolbar"] {
         display: none;
     }
