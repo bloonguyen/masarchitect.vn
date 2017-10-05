@@ -2041,7 +2041,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (html) {
-    return "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>MAS Architecture</title>\n        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>\n        <link href='/css/bootstrap.min.css' rel='stylesheet'>\n        <link href='/css/stylesheet.css' rel='stylesheet'>\n        <link href='/bundle/styles.css' rel='stylesheet'>\n        <link rel=\"icon\" type=\"image/png\" href=\"/images/favicon.png\">\n        <meta charset=\"utf-8\">\n    </head>\n    <body>\n        <div id=\"app\">" + html + "</div>\n        <script src=\"/bundle/bundle.js\"></script>\n    </body>\n    </html>\n";
+    return "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>MAS Architecture</title>\n        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>\n        <link href='/css/bootstrap.min.css' rel='stylesheet'>\n        <link href='/css/stylesheet.css' rel='stylesheet'>\n        <link href='/bundle/styles.css' rel='stylesheet'>\n        <link rel=\"icon\" type=\"image/png\" href=\"/images/logo/favicon.png\">\n        <meta charset=\"utf-8\">\n    </head>\n    <body>\n        <div id=\"app\">" + html + "</div>\n        <script src=\"/bundle/bundle.js\"></script>\n    </body>\n    </html>\n";
 };
 
 /***/ }),
