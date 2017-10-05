@@ -83,7 +83,7 @@ export default class ProjectPage extends React.Component {
 					<span style={{margin:'0 10px'}}> | </span>
 					<a>{this.state.projectName}</a>
 				</div>
-				<ProjectUnit data={this.state.project} />
+				<ProjectUnit locale={this.props.locale} data={this.state.project} />
 			</MainLayout>
 		)
 	}
@@ -91,10 +91,18 @@ export default class ProjectPage extends React.Component {
 
 export class ProjectUnit extends React.Component {
 	render() {
+		if (this.props.locale =="en") {
+			var description = this.props.data.giaiThichTiengAnh.split("\n").map(i => {
+	            return <div>{i}</div>;
+	        });
+		}
+		else {
+			var description = this.props.data.giaiThichTiengViet.split("\n").map(i => {
+	            return <div>{i}</div>;
+	        });
+		}
+		console.log('giaithich: ',this.props.locale);
 
-		var description = this.props.data.giaiThichTiengViet.split("\n").map(i => {
-            return <div>{i}</div>;
-        });
 		var cols;
 		var width = myWindow.innerWidth;
 			if (width<600) {

@@ -47,7 +47,7 @@ export default class ContactPage extends React.Component{
             <MainLayout
                 switchLang={this.props.switchLang}
                 locale={this.props.locale}>
-                <div style={{marginBottom:'30px'}} className={globalStyles.breadscrumb}>
+                <div style={{marginBottom:'20px'}} className={globalStyles.breadscrumb}>
                     <Link to="/contact">{this.state.lang.contact}</Link>
                 </div>
                 <div className={styles.map_container}>

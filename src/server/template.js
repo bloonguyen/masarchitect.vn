@@ -6,6 +6,7 @@ export default (html) => `
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
         <link href='/css/bootstrap.min.css' rel='stylesheet'>
         <link href='/css/stylesheet.css' rel='stylesheet'>
+        <link href='/bundle/styles.css' rel='stylesheet'>
         <link rel="icon" type="image/png" href="/images/favicon.png">
         <meta charset="utf-8">
     </head>

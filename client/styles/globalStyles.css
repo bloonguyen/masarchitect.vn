@@ -7,6 +7,9 @@
     justify-content: space-between;
 }
 
+.content_board {
+	margin: 20px 0;
+}
 
 .main_flex_container {
 	display: flex;
@@ -31,7 +34,7 @@
 
 .breadscrumb * {
 	color: #505050;
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: 300;
 }
 
@@ -42,7 +45,6 @@
 
 .breadscrumb a:hover{
 	color: #000;
-	font-weight: 500;
 }
 
 /*@media only screen and (max-width: 700px) {

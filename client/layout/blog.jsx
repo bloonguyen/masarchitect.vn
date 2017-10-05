@@ -39,16 +39,16 @@ export default class BlogPage extends React.Component {
 							/>)
 			}
 		})
-		var blog = this.props.locale == 'vi'? "TIN TỨC":"BLOG";
+		var blog = this.props.locale == 'vi'? "TIN TỨC":"NEWS";
 		console.log("blog:",blog);
 		return (
 				<MainLayout
 					switchLang={this.props.switchLang}
 					locale={this.props.locale}>
-					<div className={globalStyles.breadscrumb+ ' '+ styles.breadscrumb}>
+					<div className={globalStyles.breadscrumb}>
 						<Link to="/blog">{blog}</Link>
 					</div>
-					{nodeList}
+					<div className={globalStyles.content_board}>{nodeList}</div>
 				</MainLayout>
 		)
 	}

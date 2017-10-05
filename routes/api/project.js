@@ -1,9 +1,9 @@
 var keystone = require('keystone');
-var congTrinh = keystone.lists['congTrinh'];
-var loaiCongTrinh = keystone.lists['loaiCongTrinh'];
+
 
 exports = module.exports = function (req, res) {
-	console.log('params ====> ',req.params.name);
+	var congTrinh = keystone.lists['congTrinh'];
+	var loaiCongTrinh = keystone.lists['loaiCongTrinh'];
 	congTrinh.model.findOne()
 		.where('key',req.params.name)
 		.populate('theLoai')

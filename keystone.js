@@ -28,11 +28,15 @@ keystone.init({
 	'brand': 'masArchitecture',
 	'less': 'public',
 	'static': 'public',
-	'favicon': 'public/favicon.ico',
+	'favicon': 'public/images/logo/favicon.png',
+	'signin logo': ['/images/logo/transparent_grey.png', 200],
 	'views': 'templates/views',
 	'view engine': 'ejs',
 	'custom engine': require('ejs').__express,
-
+	'wysiwyg additional options': { 'external_plugins': { 'uploadimage': '/js/uploadimage/plugin.min.js' } },
+	'wysiwyg cloudinary images': true,
+	'wysiwyg additional buttons':'removeformat | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code',
+	'wysiwyg override toolbar':true,
 	'auto update': true,
 	'session': true,
 	'auth': true,
@@ -68,7 +72,8 @@ keystone.set('nav', {
 		'users',
 		'posts',
 		'nhanSu',
-		'slidePhoto'
+		'slidePhoto',
+		'gioiThieu'
 	]
 });
 

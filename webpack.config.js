@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 
 //Thư mục sẽ chứa tập tin được biên dịch
@@ -48,6 +49,7 @@ var config = {
         // template: __dirname + '/views/template/root.ejs',
         // inject: 'body',
         // })
+        new ExtractTextPlugin("/styles.css"),
     ] : [
         new webpack.DefinePlugin({
             'process.env': {
@@ -67,6 +69,7 @@ var config = {
         // template: __dirname + '/views/template/root.ejs',
         // inject: 'body',
         // })
+        new ExtractTextPlugin("/styles.css"),
     ],
     resolve: {
         unsafeCache: true,
@@ -93,16 +96,18 @@ var config = {
             },
             {
                 test: /\.css$/,
-                use: [
-                    { loader: "style-loader" },
-                    { loader: "css-loader",
-                        options: {
-                            modules: true,
-                            localIdentName: '[path]___[name]__[local]___[hash:base64:5]',
-                            importLoaders: 1,
-                        }
-                    },
-                ]
+                    use: ExtractTextPlugin.extract({
+                        fallback: 'style-loader',
+                        //resolve-url-loader may be chained before sass-loader if necessary
+                        use: [
+                            { loader: "css-loader",
+                                options: {
+                                    modules: true,
+                                    localIdentName: '[path]___[name]__[local]___[hash:base64:5]',
+                                    importLoaders: 1,
+                                }
+                            }]
+                    })
             }
         ]
     },

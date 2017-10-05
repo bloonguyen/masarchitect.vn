@@ -34,8 +34,7 @@ export default class PostPage extends React.Component {
 		return null;
 	}
 	render() {
-		var blog = this.props.locale == 'vi'? "TIN TỨC":"BLOG";
-		console.log("blog:",blog);
+		var blog = this.props.locale == 'vi'? "TIN TỨC":"NEWS";
 		return (
 				<MainLayout
 					switchLang={this.props.switchLang}
@@ -44,7 +43,9 @@ export default class PostPage extends React.Component {
 						<Link to="/blog">{blog}</Link>
 						{this._renderPostLink()}
 					</div>
-					<Post data={this.state.data} />
+					<div className={globalStyles.content_board}>
+						<Post data={this.state.data} />
+					</div>
 				</MainLayout>
 		)
 	}
@@ -56,7 +57,7 @@ export class Post extends React.Component {
 		var date = new Date();
 		var youtubeUrl = (this.props.data.youtubeLink)? this.props.data.youtubeLink : '';
 		youtubeUrl = youtubeUrl.replace("watch?v=","embed/")
-		var parsedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();
+		var parsedDate = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
 		var content = (this.props.data.noiDung)? this.props.data.noiDung.dayDu : '';
 		var url = (this.props.data.hinhDaiDien)? (this.props.data.hinhDaiDien.url) : '';
 		var youtubeEmbeded = (this.props.data.youtubeLink)? (
@@ -66,26 +67,20 @@ export class Post extends React.Component {
 		) : null;
 		return (
 			<div className={globalStyles.main_flex_container}>
-				<div className={styles.content_wrapper}>
-					<div className={globalStyles.col_4}>
+				<div className={styles.content_wrapper} style={{display:'initial'}}>
 						<div className={styles.content_left_wrapper}>
-							<div className={styles.title}>
+							<div className={styles.title} style={{textTransform:'uppercase'}}>
 								{this.props.data.tieuDe}
 							</div>
 							<p className={styles.publishedDate}>
 								{parsedDate}</p>
 						</div>
-					</div>
-					<div className={globalStyles.col_8}>
 						<div className={styles.content_right}>
 						{youtubeEmbeded}
-						<img src={url} style={{padding:'10px'}}/>
-							<p className={styles.title}
-								style={{marginTop:'20px',fontWeight:'300'}}
+							<p className={styles.title} style={{fontSize:'13px',fontWeight:'300'}}
 								dangerouslySetInnerHTML={{__html: content}}>
 							</p>
 						</div>
-					</div>
 				</div>
 			</div>
 		)

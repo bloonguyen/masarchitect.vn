@@ -46,16 +46,18 @@ export default class OurTeam extends React.Component {
 	render() {
 		if (this.props.locale =="vi") {
 			var name = this.state.boss.name;
-			var description = this.state.boss.giaiThichTiengViet;
+			var description = this.state.boss.vaiTroTiengViet;
 		}
 		else {
 			var name = this.state.boss.englishName;
-			var description = this.state.boss.giaiThichTiengAnh;
+			var description = this.state.boss.vaiTroTiengAnh;
 		}
 		var url = cloudinaryModify(this.state.boss.anhDaiDien.url,'w_512');
+		var person = this.state.boss.key;
 		return (
 			<div className={styles.our_team_container}>
 				<div className={styles.boss_container}>
+				<Link to={"/ourteam/"+person} style={{textDecoration:'none	'}}>
 					<div>
 						<div className={gridStyles.profile_item}
 							style={{backgroundImage:'url('+url+')'}}>
@@ -65,6 +67,7 @@ export default class OurTeam extends React.Component {
 						</div>
 						<div className={gridStyles.profile_description}>{description}</div>
 					</div>
+				</Link>
 				</div>
 				<ItemGrid locale={this.props.locale} item={"profile"} data={this.state.data}/>
 			</div>

@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import {Link, browserHistory} from 'react-router';
 import globalStyles from 'client/styles/globalStyles.css';
 import styles from 'client/layout/styles/about_style.css';
+import Carousel from 'nuka-carousel';
+import { CloudinaryContext, Transformation, Image } from 'cloudinary-react';
 
 const vi = {
     intro: 'Giới thiệu',
@@ -32,9 +34,27 @@ export default class General extends React.Component{
 	constructor(props) {
         super(props);
         this.state = {
-            lang:vi
+            lang:vi,
+            name:[],
         }
     }
+
+    fetchDataFromServer() {
+		fetch('/api/about', {
+			credentials: 'include',
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+			}
+		})
+		.then((response) => response.json())
+		.then((responseJson) => {
+			this.setState({name:responseJson});
+			console.log('fetch data result: ',this.state.name);
+		})
+	}
+
     componentWillReceiveProps(nextProps) {
         switch (nextProps.locale) {
             case 'en':
@@ -45,6 +65,7 @@ export default class General extends React.Component{
         }
     }
     componentWillMount() {
+        this.fetchDataFromServer();
         switch (this.props.locale) {
             case 'en':
                 this.setState({lang:en});
@@ -54,30 +75,47 @@ export default class General extends React.Component{
         }
     }
     render(){
-        return (
-            <div className={styles.wrapper}>
-                <div className={globalStyles.col_4}>
-                    <div className={styles.para_wrapper}>
-                        <h1 className={styles.title}>{this.state.lang.intro}</h1>
-                        <p className ={styles.para}>{this.state.lang.introPara}</p>
+        // return (
+        //     <div className={styles.wrapper}>
+        //         <div className={globalStyles.col_4}>
+        //             <div className={styles.para_wrapper}>
+        //                 <h1 className={styles.title}>{this.state.lang.intro}</h1>
+        //                 <p className ={styles.para}>{this.state.lang.introPara}</p>
+        //             </div>
+        //         </div>
+        //
+        //         <div className={globalStyles.col_4}>
+        //             <div className={styles.para_wrapper}>
+        //                 <h1 className={styles.title}>{this.state.lang.design}</h1>
+        //                 <p className ={styles.para}>{this.state.lang.designPara}</p>
+        //             </div>
+        //         </div>
+        //
+        //         <div className={globalStyles.col_4}>
+        //             <div className={styles.para_wrapper}>
+        //                 <h1 className={styles.title}>{this.state.lang.construction}</h1>
+        //                 <p className ={styles.para}>{this.state.lang.constructionPara}</p>
+        //             </div>
+        //         </div>
+        //     </div>
+        //
+        // );
+        console.log("data",this.state.name);
+        var nodeList = this.state.name.map((item,index) =>{
+            if (this.props.locale == item.ngonNgu)
+                return(
+                    <div className={styles.wrapper}>
+                        <div className={styles.intro_para}
+                             dangerouslySetInnerHTML={{__html: item.noiDung}}>
+                        </div>
                     </div>
-                </div>
+                )
 
-                <div className={globalStyles.col_4}>
-                    <div className={styles.para_wrapper}>
-                        <h1 className={styles.title}>{this.state.lang.design}</h1>
-                        <p className ={styles.para}>{this.state.lang.designPara}</p>
-                    </div>
-                </div>
-
-                <div className={globalStyles.col_4}>
-                    <div className={styles.para_wrapper}>
-                        <h1 className={styles.title}>{this.state.lang.construction}</h1>
-                        <p className ={styles.para}>{this.state.lang.constructionPara}</p>
-                    </div>
-                </div>
+        })
+        return(
+            <div>
+                {nodeList}
             </div>
-
         );
     }
 }

@@ -11,26 +11,27 @@ import ContactPage from 'client/layout/contact.jsx'
 import PostPage from 'client/layout/post.jsx';
 import StaffCVPage from 'client/layout/staffCV.jsx'
 
-module.exports = (
+exports = module.exports = (
+		<Router history={browserHistory}>
 
-		<Route path="/" component={(props) => <IndexPage/>}>
+			<Route path="/" component={IndexPage}/>
 
-			<Route path="/about" component={(props) => <AboutPage/>}/>
+			<Route path="/about" component={AboutPage}/>
 
-			<Route path="/about/:type" component={(props) => <AboutPage/>}/>
+			<Route path="/about/:type" component={AboutPage}/>
 
-			<Route path="/ourteam/:key" component={(props) => <StaffCVPage/>}/>
+			<Route path="/ourteam/:key" component={StaffCVPage}/>
 
-			<Route path="/blog" component={(props) => <BlogPage/>}/>
+			<Route path="/blog" component={BlogPage}/>
 
-			<Route path="/post/:key" component={(props) => <PostPage/>}/>
+			<Route path="/post/:key" component={PostPage}/>
 
-			<Route path="/project_category/:name" component={(props) => <ProjectCategory/>}/>
+			<Route path="/project_category/:name" component={ProjectCategory}/>
 
-			<Route path="/project_category" component={(props) => <ProjectCategory/>}/>
+			<Route path="/project_category" component={ProjectCategory}/>
 
-			<Route path="/project/:name" component={(props) => <ProjectPage/>} />
+			<Route path="/project/:name" component={ProjectPage} />
 
-			<Route path="/contact" component={(props) => <ContactPage/>} />
-		</Route>
+			<Route path="/contact" component={ContactPage} />
+		</Router>
 )
