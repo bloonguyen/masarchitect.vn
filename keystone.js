@@ -26,6 +26,7 @@ keystone.set('routes', app);
 keystone.init({
 	'name': 'masArchitecture',
 	'brand': 'masArchitecture',
+	'admin path' : 'admin',
 	'less': 'public',
 	'static': 'public',
 	'favicon': 'public/images/logo/favicon.png',
@@ -65,8 +66,8 @@ app.use(keystone.session.persist);
 // keystone.set('routes', require('./routes'));
 app.use(express.static('./public'));
 app.use('/api',api);
-app.use('/keystone', keystone.Admin.Server.createStaticRouter(keystone));
-app.use('/keystone', keystone.Admin.Server.createDynamicRouter(keystone));
+app.use('/admin', keystone.Admin.Server.createStaticRouter(keystone));
+app.use('/admin', keystone.Admin.Server.createDynamicRouter(keystone));
 app.use('/',bundle);
 
 // Configure the navigation bar in Keystone's Admin UI
