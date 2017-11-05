@@ -45,6 +45,10 @@
     width: 80vw;
 }
 
+.intro_para img {
+    width: 100%!important;
+}
+
 .cover_container {
 	position: relative;
     max-width: 800px;
