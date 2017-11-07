@@ -3274,11 +3274,7 @@ var SlideShow = exports.SlideShow = function (_React$Component2) {
 					// var url = cloudinaryModify(item.image.url,)
 					console.log('index: ', index);
 					if (index !== _this4.props.images.length - 1) {
-						return _react2.default.createElement(
-							'div',
-							null,
-							_react2.default.createElement('img', { className: _index_style2.default.carousel_img, src: item.image.url })
-						);
+						return _react2.default.createElement('img', { className: _index_style2.default.carousel_img, src: item.image.url });
 					} else {
 						console.log('last item');
 						return _react2.default.createElement('img', { className: _index_style2.default.carousel_img, src: item.image.url });

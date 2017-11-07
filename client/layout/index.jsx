@@ -115,9 +115,7 @@ export class SlideShow extends React.Component {
 				// var url = cloudinaryModify(item.image.url,)
 				console.log('index: ',index);
 				if (index!==this.props.images.length-1) {
-					return (<div>
-						<img className={styles.carousel_img} src={item.image.url}/>
-					</div>)
+					return <img className={styles.carousel_img} src={item.image.url}/>
 				}
 				else {
 					console.log('last item');
