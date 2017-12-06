@@ -59,6 +59,53 @@
 	margin: auto;
 }
 
+.modal {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  background-color: #fff;
+  z-index: 1001;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.85);
+  z-index: 1000;
+}
+
+.vr_img_container {
+	width: 350px;
+	height: 350px;
+	position: relative;
+}
+
+.vr_img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+.vr_img_container::after {
+	content: '';
+    width: 100%;
+    height: 100%;
+    opacity: .7;
+    top: 0;
+    left: 0;
+    background-image: url('/images/360mark.png');
+	background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+	pointer-events: none;
+}
+
 @media only screen and (min-width:1200px) {
 	.text_container {
 		padding: 0;

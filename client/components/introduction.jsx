@@ -4,7 +4,9 @@ import {Link, browserHistory} from 'react-router';
 import globalStyles from 'client/styles/globalStyles.css';
 import styles from 'client/layout/styles/about_style.css';
 import Carousel from 'nuka-carousel';
-
+// if (typeof window !== 'undefined') {
+//     require('aframe');
+// }
 const vi = {
     intro: 'Giới thiệu',
     design: 'Lĩnh vực thiết kế',
@@ -35,6 +37,7 @@ export default class General extends React.Component{
         this.state = {
             lang:vi,
             name:[],
+            aframe:false
         }
     }
 
@@ -73,6 +76,16 @@ export default class General extends React.Component{
                 this.setState({lang:vi});
         }
     }
+    componentDidMount() {
+        this.setState({aframe:true});
+    }
+    // renderAframe() {
+    //     if (this.state.aframe && window) {
+    //         return (
+    //
+    //         )
+    //     }
+    // }
     render(){
         // return (
         //     <div className={styles.wrapper}>

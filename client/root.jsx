@@ -65,7 +65,6 @@ class App extends React.Component {
                 <Route path="/contact" component={(props) => <ContactPage
                     locale={this.state.locale}
                     switchLang={this.switchLang.bind(this)} {...props}/>} />
-
             </Router>
         )
     }

@@ -33,5 +33,6 @@ exports = module.exports = (
 			<Route path="/project/:name" component={ProjectPage} />
 
 			<Route path="/contact" component={ContactPage} />
+
 		</Router>
 )

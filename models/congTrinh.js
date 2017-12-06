@@ -5,7 +5,13 @@ var Types = keystone.Field.Types;
  * Project Model
  * =============
  */
-
+ var myStorage = new keystone.Storage({
+   adapter: keystone.Storage.Adapters.FS,
+   fs: {
+     path: 'public/images/vrImage',
+     publicPath: '/images/vrImage',
+   },
+ });
 var congTrinh = new keystone.List('congTrinh', {
 	autokey: { from: 'name', path: 'key', unique: true },
 	label: 'Công trình',
@@ -21,6 +27,7 @@ congTrinh.add({
 	ngayHoanThanh: { type: Types.Date, default: Date.now },
 	hinhDaiDien: { type: Types.CloudinaryImage },
 	hinhAnhCongTrinh: { type: Types.CloudinaryImages },
+	vrImage: { type: Types.File, storage: myStorage }
 });
 
 congTrinh.register();

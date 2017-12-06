@@ -2041,7 +2041,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (html) {
-    return "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>MAS Architecture</title>\n        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>\n        <meta name='description' content='MAS Architecture design  civil & industrial architectural projects such as houses, villas, restaurant, hotel, bar, coffee, office ... With the slogan \"Creativity - Experiences - Enthusiasm\", MAS Architecture will bring you an active and comfortable living space.'/>\n        <meta name='author' content='M.SPACE Co.,ltd'/>\n        <meta property=\"og:image\" content=\"/images/cover.jpg\">\n        <link href='/css/bootstrap.min.css' rel='stylesheet'>\n        <link href='/css/stylesheet.css' rel='stylesheet'>\n        <link href='/bundle/styles.css' rel='stylesheet'>\n        <link rel=\"icon\" type=\"image/png\" href=\"/images/logo/favicon.png\">\n        <meta charset=\"utf-8\">\n    </head>\n    <body>\n        <div id=\"app\">" + html + "</div>\n        <script src=\"/bundle/bundle.js\"></script>\n    </body>\n    </html>\n";
+    return "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>MAS Architecture</title>\n        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>\n        <meta name='description' content='MAS Architecture design civil & industrial architectural projects such as houses, villas, restaurant, hotel, bar, coffee, office ... With the slogan \"Creativity - Experiences - Enthusiasm\", MAS Architecture will bring you an active and comfortable living space.'/>\n        <meta name='author' content='M.SPACE Co.,ltd'/>\n        <meta property=\"og:image\" content=\"/images/cover.jpg\">\n        <link href='/css/bootstrap.min.css' rel='stylesheet'>\n        <link href='/css/stylesheet.css' rel='stylesheet'>\n        <link href='/bundle/styles.css' rel='stylesheet'>\n        <link rel=\"icon\" type=\"image/png\" href=\"/images/logo/favicon.png\">\n        <script src=\"https://aframe.io/releases/0.7.1/aframe.min.js\"></script>\n        <meta charset=\"utf-8\">\n    </head>\n    <body>\n        <div id=\"app\">" + html + "</div>\n        <script src=\"/bundle/bundle.js\"></script>\n    </body>\n    </html>\n";
 };
 
 /***/ }),
@@ -2093,6 +2093,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+// if (typeof window !== 'undefined') {
+//     require('aframe');
+// }
 var vi = {
     intro: 'Giới thiệu',
     design: 'Lĩnh vực thiết kế',
@@ -2127,7 +2130,8 @@ var General = function (_React$Component) {
 
         _this.state = {
             lang: vi,
-            name: []
+            name: [],
+            aframe: false
         };
         return _this;
     }
@@ -2174,6 +2178,19 @@ var General = function (_React$Component) {
                     this.setState({ lang: vi });
             }
         }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.setState({ aframe: true });
+        }
+        // renderAframe() {
+        //     if (this.state.aframe && window) {
+        //         return (
+        //
+        //         )
+        //     }
+        // }
+
     }, {
         key: 'render',
         value: function render() {
@@ -2400,7 +2417,7 @@ var _reactDom = __webpack_require__(2);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactPhotoGallery = __webpack_require__(51);
+var _reactPhotoGallery = __webpack_require__(52);
 
 var _reactPhotoGallery2 = _interopRequireDefault(_reactPhotoGallery);
 
@@ -3652,6 +3669,10 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _reactRouter = __webpack_require__(1);
 
+var _reactModal = __webpack_require__(51);
+
+var _reactModal2 = _interopRequireDefault(_reactModal);
+
 var _globalStyles = __webpack_require__(3);
 
 var _globalStyles2 = _interopRequireDefault(_globalStyles);
@@ -3667,6 +3688,8 @@ var _main2 = _interopRequireDefault(_main);
 var _photoGrid = __webpack_require__(26);
 
 var _photoGrid2 = _interopRequireDefault(_photoGrid);
+
+var _utils = __webpack_require__(9);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3807,10 +3830,62 @@ var ProjectUnit = exports.ProjectUnit = function (_React$Component2) {
 	function ProjectUnit() {
 		_classCallCheck(this, ProjectUnit);
 
-		return _possibleConstructorReturn(this, (ProjectUnit.__proto__ || Object.getPrototypeOf(ProjectUnit)).apply(this, arguments));
+		var _this3 = _possibleConstructorReturn(this, (ProjectUnit.__proto__ || Object.getPrototypeOf(ProjectUnit)).call(this));
+
+		_this3.state = {
+			showModal: false
+		};
+		_this3.handleOpenModal = _this3.handleOpenModal.bind(_this3);
+		_this3.handleCloseModal = _this3.handleCloseModal.bind(_this3);
+		return _this3;
 	}
 
 	_createClass(ProjectUnit, [{
+		key: 'handleOpenModal',
+		value: function handleOpenModal() {
+			this.setState({ showModal: true });
+		}
+	}, {
+		key: 'handleCloseModal',
+		value: function handleCloseModal() {
+			this.setState({ showModal: false });
+		}
+	}, {
+		key: '_renderVrImage',
+		value: function _renderVrImage() {
+			if (this.props.data.vrImage) {
+				var url = this.props.data.hinhDaiDien ? (0, _utils.cloudinaryModify)(this.props.data.hinhDaiDien.url, 'w_350') : null;
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(
+						'div',
+						{ className: _project_style2.default.vr_img_container },
+						_react2.default.createElement('img', { className: _project_style2.default.vr_img, onClick: this.handleOpenModal, src: url })
+					),
+					_react2.default.createElement(
+						_reactModal2.default,
+						{
+							isOpen: this.state.showModal,
+							onRequestClose: this.handleCloseModal,
+							className: _project_style2.default.modal,
+							overlayClassName: _project_style2.default.overlay
+						},
+						_react2.default.createElement(
+							'div',
+							{ style: { margin: 'auto', width: '100%', height: '100%' } },
+							_react2.default.createElement(
+								'a-scene',
+								{ embedded: true },
+								_react2.default.createElement('a-entity', { camera: true, 'look-controls': 'reverseMouseDrag: true; hmdEnabled: false' }),
+								_react2.default.createElement('a-sky', { src: '/images/vrImage/' + this.props.data.vrImage.filename })
+							)
+						)
+					)
+				);
+			} else return null;
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 			if (this.props.locale == "en") {
@@ -3843,7 +3918,7 @@ var ProjectUnit = exports.ProjectUnit = function (_React$Component2) {
 					cols = 4;
 				}
 			}
-			console.log('width: ', width);
+			console.log('props data: ', this.props.data);
 			return _react2.default.createElement(
 				'div',
 				null,
@@ -3872,6 +3947,7 @@ var ProjectUnit = exports.ProjectUnit = function (_React$Component2) {
 					_react2.default.createElement(
 						'div',
 						{ style: { maxWidth: '1200px' } },
+						this._renderVrImage(),
 						_react2.default.createElement(_photoGrid2.default, { photos: this.props.data.hinhAnhCongTrinh, cols: cols })
 					)
 				)
@@ -4594,7 +4670,7 @@ exports = module.exports = __webpack_require__(4)(undefined);
 
 
 // module
-exports.push([module.i, ".client-layout-styles-___project_style__cover_photo___3moRs {\n\theight: 150px;\n\tmax-width: 1200px;\n\tmargin-left: auto;\n\tmargin-right: auto;\n\tbackground-image: url(http://res.cloudinary.com/masarchitect/image/upload/v1503404748/cong-trinhs/hinhDaiDien/jnitllytsjiezfbeibvg.jpg);\n\tbackground-size: cover;\n\tbackground-position: 50% 25%;\n\n}\n\n.client-layout-styles-___project_style__cover_board___3lQpA {\n\twidth: inherit;\n\tmargin-bottom: 10px;\n}\n\n@media only screen and (min-width: 768px) {\n\t.client-layout-styles-___project_style__cover_photo___3moRs {\n\t\theight: 35vw;\n\t}\n}\n\n.client-layout-styles-___project_style__cover_board___3lQpA {\n\twidth: inherit;\n\tmargin-bottom: 10px;\n}\n\n.client-layout-styles-___project_style__title___4zlTa {\n\tmargin: 0 0 6px 0;\n\tpadding: 0;\n\tfont-size: 13px;\n\tline-height: 1.5em;\n\tfont-weight: 500;\n\ttext-transform: uppercase;\n}\n\n.client-layout-styles-___project_style__date___2nWKb {\n\tcolor: #b2b2b2;\n    font-size: 12px;\n    line-height: 1em;\n    margin-bottom: 12px;\n}\n\n.client-layout-styles-___project_style__description___5pvZD {\n\tcolor: #505050;\n\tfont-size: 13px;\n\tline-height: 1.5em;\n\tmargin-bottom: 12px;\n}\n\n.client-layout-styles-___project_style__grid_container___or-dk {\n\tdisplay: flex;\n\tjustify-content: center;\n}\n.client-layout-styles-___project_style__text_container___28fMZ {\n\ttext-align: left;\n\tpadding-left: 10px;\n\tmax-width: 1200px;\n\tmargin: auto;\n}\n\n@media only screen and (min-width:1200px) {\n\t.client-layout-styles-___project_style__text_container___28fMZ {\n\t\tpadding: 0;\n\t}\n}\n", ""]);
+exports.push([module.i, ".client-layout-styles-___project_style__cover_photo___3moRs {\n\theight: 150px;\n\tmax-width: 1200px;\n\tmargin-left: auto;\n\tmargin-right: auto;\n\tbackground-image: url(http://res.cloudinary.com/masarchitect/image/upload/v1503404748/cong-trinhs/hinhDaiDien/jnitllytsjiezfbeibvg.jpg);\n\tbackground-size: cover;\n\tbackground-position: 50% 25%;\n\n}\n\n.client-layout-styles-___project_style__cover_board___3lQpA {\n\twidth: inherit;\n\tmargin-bottom: 10px;\n}\n\n@media only screen and (min-width: 768px) {\n\t.client-layout-styles-___project_style__cover_photo___3moRs {\n\t\theight: 35vw;\n\t}\n}\n\n.client-layout-styles-___project_style__cover_board___3lQpA {\n\twidth: inherit;\n\tmargin-bottom: 10px;\n}\n\n.client-layout-styles-___project_style__title___4zlTa {\n\tmargin: 0 0 6px 0;\n\tpadding: 0;\n\tfont-size: 13px;\n\tline-height: 1.5em;\n\tfont-weight: 500;\n\ttext-transform: uppercase;\n}\n\n.client-layout-styles-___project_style__date___2nWKb {\n\tcolor: #b2b2b2;\n    font-size: 12px;\n    line-height: 1em;\n    margin-bottom: 12px;\n}\n\n.client-layout-styles-___project_style__description___5pvZD {\n\tcolor: #505050;\n\tfont-size: 13px;\n\tline-height: 1.5em;\n\tmargin-bottom: 12px;\n}\n\n.client-layout-styles-___project_style__grid_container___or-dk {\n\tdisplay: flex;\n\tjustify-content: center;\n}\n.client-layout-styles-___project_style__text_container___28fMZ {\n\ttext-align: left;\n\tpadding-left: 10px;\n\tmax-width: 1200px;\n\tmargin: auto;\n}\n\n.client-layout-styles-___project_style__modal___Ze_w5 {\n  position: absolute;\n  top: 40px;\n  left: 40px;\n  right: 40px;\n  bottom: 40px;\n  background-color: #fff;\n  z-index: 1001;\n}\n\n.client-layout-styles-___project_style__overlay___12yE3 {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: rgba(0,0,0,.85);\n  z-index: 1000;\n}\n\n.client-layout-styles-___project_style__vr_img_container___3v8zg {\n\twidth: 350px;\n\theight: 350px;\n\tposition: relative;\n}\n\n.client-layout-styles-___project_style__vr_img___3lxP6 {\n\tobject-fit: cover;\n\twidth: 100%;\n\theight: 100%;\n\tcursor: pointer;\n}\n\n.client-layout-styles-___project_style__vr_img_container___3v8zg::after {\n\tcontent: '';\n    width: 100%;\n    height: 100%;\n    opacity: .7;\n    top: 0;\n    left: 0;\n    background-image: url('/images/360mark.png');\n\tbackground-repeat: no-repeat;\n    background-position: center;\n    position: absolute;\n\tpointer-events: none;\n}\n\n@media only screen and (min-width:1200px) {\n\t.client-layout-styles-___project_style__text_container___28fMZ {\n\t\tpadding: 0;\n\t}\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -4604,7 +4680,11 @@ exports.locals = {
 	"date": "client-layout-styles-___project_style__date___2nWKb",
 	"description": "client-layout-styles-___project_style__description___5pvZD",
 	"grid_container": "client-layout-styles-___project_style__grid_container___or-dk",
-	"text_container": "client-layout-styles-___project_style__text_container___28fMZ"
+	"text_container": "client-layout-styles-___project_style__text_container___28fMZ",
+	"modal": "client-layout-styles-___project_style__modal___Ze_w5",
+	"overlay": "client-layout-styles-___project_style__overlay___12yE3",
+	"vr_img_container": "client-layout-styles-___project_style__vr_img_container___3v8zg",
+	"vr_img": "client-layout-styles-___project_style__vr_img___3lxP6"
 };
 
 /***/ }),
@@ -4728,6 +4808,12 @@ module.exports = require("react-image-lightbox");
 
 /***/ }),
 /* 51 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-modal");
+
+/***/ }),
+/* 52 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-photo-gallery");

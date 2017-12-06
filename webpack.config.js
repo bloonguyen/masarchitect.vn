@@ -71,6 +71,7 @@ var config = {
         // })
         new ExtractTextPlugin("/styles.css"),
     ],
+    // devtool: 'source-map',
     resolve: {
         unsafeCache: true,
         alias: {
