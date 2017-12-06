@@ -19,15 +19,16 @@ var congTrinh = new keystone.List('congTrinh', {
 });
 
 congTrinh.add({
-	name: { type: String, required: true },
-	diaChi: {type: String},
-	theLoai: {type: Types.Relationship, ref: 'loaiCongTrinh', many: true},
-	giaiThichTiengAnh: { type: Types.Textarea},
-	giaiThichTiengViet: { type: Types.Textarea},
-	ngayHoanThanh: { type: Types.Date, default: Date.now },
-	hinhDaiDien: { type: Types.CloudinaryImage },
-	hinhAnhCongTrinh: { type: Types.CloudinaryImages },
-	vrImage: { type: Types.File, storage: myStorage }
+	name: { type: String, required: true, label:'Tên công trình' },
+	diaChi: {type: String, label:'Địa chỉ'},
+	theLoai: {type: Types.Relationship, ref: 'loaiCongTrinh', many: true, label:'Thể loại'},
+	giaiThichTiengAnh: { type: Types.Textarea, label:'Giải thích tiếng Anh'},
+	giaiThichTiengViet: { type: Types.Textarea, label:'Giải thích tiếng Việt'},
+	ngayHoanThanh: { type: Types.Date, default: Date.now, label:'Ngày hoàn thành' },
+	hinhDaiDien: { type: Types.CloudinaryImage, label: 'Hình đại diện' },
+	hinhAnhCongTrinh: { type: Types.CloudinaryImages, label:'Hình ảnh công trình' },
+	vrImage: { type: Types.File, storage: myStorage, label:'Hình 360' },
+	vrThumbnail: {type: Types.CloudinaryImage, label:'Thumbnail 360'}
 });
 
 congTrinh.register();

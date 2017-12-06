@@ -110,7 +110,7 @@ export class ProjectUnit extends React.Component {
 	}
 	_renderVrImage() {
 		if (this.props.data.vrImage) {
-			var url = (this.props.data.hinhDaiDien)?cloudinaryModify(this.props.data.hinhDaiDien.url,'w_512'):null;
+			var url = (this.props.data.vrThumbnail)?cloudinaryModify(this.props.data.vrThumbnail.url,'w_512'):'/images/img_holder.jpg';
 			return (
 				<div>
 					<div className={styles.vr_img_container}>
