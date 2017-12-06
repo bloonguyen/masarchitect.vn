@@ -3854,7 +3854,7 @@ var ProjectUnit = exports.ProjectUnit = function (_React$Component2) {
 		key: '_renderVrImage',
 		value: function _renderVrImage() {
 			if (this.props.data.vrImage) {
-				var url = this.props.data.hinhDaiDien ? (0, _utils.cloudinaryModify)(this.props.data.hinhDaiDien.url, 'w_350') : null;
+				var url = this.props.data.hinhDaiDien ? (0, _utils.cloudinaryModify)(this.props.data.hinhDaiDien.url, 'w_512') : null;
 				return _react2.default.createElement(
 					'div',
 					null,
