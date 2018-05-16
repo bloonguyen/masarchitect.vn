@@ -21,16 +21,16 @@ export default (html) => `
 
           gtag('config', 'UA-117265550-1');
         </script>
-        <script
-            type="text/javascript"
-            async defer
-            src="https://assets.pinterest.com/js/pinit.js"
-        ></script>
         <meta charset="utf-8">
     </head>
     <body>
         <div id="app">${html}</div>
         <script src="/bundle/bundle.js"></script>
+        <script
+            type="text/javascript"
+            async defer
+            src="https://assets.pinterest.com/js/pinit.js"
+        ></script>
     </body>
     </html>
 `;
