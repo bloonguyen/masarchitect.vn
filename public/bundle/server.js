@@ -3912,11 +3912,7 @@ var ProjectUnit = exports.ProjectUnit = function (_React$Component2) {
 				_react2.default.createElement(
 					'div',
 					{ className: _project_style2.default.cover_board },
-					_react2.default.createElement(
-						'div',
-						{ className: _project_style2.default.cover_photo, style: { backgroundImage: "url(" + this.props.data.hinhDaiDien.url + ")" } },
-						_react2.default.createElement('a', { href: 'https://www.pinterest.com/pin/create/button/', 'data-pin-do': 'buttonBookmark' })
-					)
+					_react2.default.createElement('div', { className: _project_style2.default.cover_photo, style: { backgroundImage: "url(" + this.props.data.hinhDaiDien.url + ")" } })
 				),
 				_react2.default.createElement(
 					'div',
@@ -3926,6 +3922,7 @@ var ProjectUnit = exports.ProjectUnit = function (_React$Component2) {
 						{ className: _project_style2.default.title },
 						this.props.data.name
 					),
+					_react2.default.createElement('a', { href: 'https://www.pinterest.com/pin/create/button/', 'data-pin-do': 'buttonBookmark' }),
 					_react2.default.createElement(
 						'div',
 						{ className: _project_style2.default.description },

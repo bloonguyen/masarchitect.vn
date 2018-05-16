@@ -164,12 +164,13 @@ export class ProjectUnit extends React.Component {
 		return (
 			<div>
 				<div className={styles.cover_board}>
-					<div className={styles.cover_photo} style={{backgroundImage:"url("+this.props.data.hinhDaiDien.url+")"}}><a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark">
-</a></div>
+					<div className={styles.cover_photo} style={{backgroundImage:"url("+this.props.data.hinhDaiDien.url+")"}}></div>
 
 				</div>
 				<div className={styles.text_container}>
 					<h1 className={styles.title}>{this.props.data.name}</h1>
+					<a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark">
+</a>
 					<div className={styles.description}>{description}</div>
 				</div>
 				<div className={styles.grid_container}>
