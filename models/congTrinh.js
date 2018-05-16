@@ -27,8 +27,8 @@ congTrinh.add({
 	ngayHoanThanh: { type: Types.Date, default: Date.now, label:'Ngày hoàn thành' },
 	hinhDaiDien: { type: Types.CloudinaryImage, label: 'Hình đại diện' },
 	hinhAnhCongTrinh: { type: Types.CloudinaryImages, label:'Hình ảnh công trình' },
-	vrImage: { type: Types.File, storage: myStorage, label:'Hình 360' },
-	vrThumbnail: {type: Types.CloudinaryImage, label:'Thumbnail 360'}
+	// vrImage: { type: Types.File, storage: myStorage, label:'Hình 360' },
+	// vrThumbnail: {type: Types.CloudinaryImage, label:'Thumbnail 360'}
 });
 
 congTrinh.register();

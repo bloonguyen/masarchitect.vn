@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Link, browserHistory} from 'react-router';
-import ReactModal from 'react-modal';
+// import ReactModal from 'react-modal';
 
 import globalStyles from 'client/styles/globalStyles.css';
 import styles from './styles/project_style.css';
@@ -93,47 +93,47 @@ export default class ProjectPage extends React.Component {
 }
 
 export class ProjectUnit extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-	      showModal: false
-	    };
-	    this.handleOpenModal = this.handleOpenModal.bind(this);
-	    this.handleCloseModal = this.handleCloseModal.bind(this);
-	}
-	handleOpenModal () {
-	  this.setState({ showModal: true });
-	}
-
-	handleCloseModal () {
-	  this.setState({ showModal: false });
-	}
-	_renderVrImage() {
-		if (this.props.data.vrImage) {
-			var url = (this.props.data.vrThumbnail)?cloudinaryModify(this.props.data.vrThumbnail.url,'w_512'):'/images/img_holder.jpg';
-			return (
-				<div>
-					<div className={styles.vr_img_container}>
-						<img className={styles.vr_img} onClick={this.handleOpenModal} src={url}/>
-					</div>
-					<ReactModal
-					   isOpen={this.state.showModal}
-					   onRequestClose={this.handleCloseModal}
-					   className={styles.modal}
-					   overlayClassName={styles.overlay}
-					>
-						<div style={{margin:'auto',width:'100%',height:'100%'}}>
-							<a-scene embedded>
-								<a-entity camera look-controls="reverseMouseDrag: true; hmdEnabled: false"></a-entity>
-								<a-sky src={'/images/vrImage/'+this.props.data.vrImage.filename} />
-							</a-scene>
-						</div>
-					</ReactModal>
-				</div>
-			)
-		}
-		else return null;
-	}
+	// constructor() {
+	// 	super();
+	// 	this.state = {
+	//       showModal: false
+	//     };
+	//     this.handleOpenModal = this.handleOpenModal.bind(this);
+	//     this.handleCloseModal = this.handleCloseModal.bind(this);
+	// }
+	// handleOpenModal () {
+	//   this.setState({ showModal: true });
+	// }
+	//
+	// handleCloseModal () {
+	//   this.setState({ showModal: false });
+	// }
+	// _renderVrImage() {
+	// 	if (this.props.data.vrImage) {
+	// 		var url = (this.props.data.vrThumbnail)?cloudinaryModify(this.props.data.vrThumbnail.url,'w_512'):'/images/img_holder.jpg';
+	// 		return (
+	// 			<div>
+	// 				<div className={styles.vr_img_container}>
+	// 					<img className={styles.vr_img} onClick={this.handleOpenModal} src={url}/>
+	// 				</div>
+	// 				<ReactModal
+	// 				   isOpen={this.state.showModal}
+	// 				   onRequestClose={this.handleCloseModal}
+	// 				   className={styles.modal}
+	// 				   overlayClassName={styles.overlay}
+	// 				>
+	// 					<div style={{margin:'auto',width:'100%',height:'100%'}}>
+	// 						<a-scene embedded>
+	// 							<a-entity camera look-controls="reverseMouseDrag: true; hmdEnabled: false"></a-entity>
+	// 							<a-sky src={'/images/vrImage/'+this.props.data.vrImage.filename} />
+	// 						</a-scene>
+	// 					</div>
+	// 				</ReactModal>
+	// 			</div>
+	// 		)
+	// 	}
+	// 	else return null;
+	// }
 	render() {
 		if (this.props.locale =="en") {
 			var description = this.props.data.giaiThichTiengAnh.split("\n").map(i => {
@@ -164,7 +164,9 @@ export class ProjectUnit extends React.Component {
 		return (
 			<div>
 				<div className={styles.cover_board}>
-					<div className={styles.cover_photo} style={{backgroundImage:"url("+this.props.data.hinhDaiDien.url+")"}}></div>
+					<div className={styles.cover_photo} style={{backgroundImage:"url("+this.props.data.hinhDaiDien.url+")"}}><a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark">
+</a></div>
+
 				</div>
 				<div className={styles.text_container}>
 					<h1 className={styles.title}>{this.props.data.name}</h1>
@@ -172,7 +174,6 @@ export class ProjectUnit extends React.Component {
 				</div>
 				<div className={styles.grid_container}>
 				<div style={{maxWidth:'1200px'}}>
-					{this._renderVrImage()}
 					<PhotoGrid photos={this.props.data.hinhAnhCongTrinh} cols={cols}/>
 				</div>
 				</div>
