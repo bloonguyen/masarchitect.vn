@@ -24,7 +24,7 @@ export default (html) => `
         <script
             type="text/javascript"
             async defer
-            src="//assets.pinterest.com/js/pinit.js"
+            src="https://assets.pinterest.com/js/pinit.js"
         ></script>
         <meta charset="utf-8">
     </head>
