@@ -3827,53 +3827,55 @@ var ProjectUnit = exports.ProjectUnit = function (_React$Component2) {
 	function ProjectUnit() {
 		_classCallCheck(this, ProjectUnit);
 
-		return _possibleConstructorReturn(this, (ProjectUnit.__proto__ || Object.getPrototypeOf(ProjectUnit)).apply(this, arguments));
+		var _this3 = _possibleConstructorReturn(this, (ProjectUnit.__proto__ || Object.getPrototypeOf(ProjectUnit)).call(this));
+
+		_this3.state = {
+			pinButton: null
+		};
+		return _this3;
 	}
+	// handleOpenModal () {
+	//   this.setState({ showModal: true });
+	// }
+	//
+	// handleCloseModal () {
+	//   this.setState({ showModal: false });
+	// }
+	// _renderVrImage() {
+	// 	if (this.props.data.vrImage) {
+	// 		var url = (this.props.data.vrThumbnail)?cloudinaryModify(this.props.data.vrThumbnail.url,'w_512'):'/images/img_holder.jpg';
+	// 		return (
+	// 			<div>
+	// 				<div className={styles.vr_img_container}>
+	// 					<img className={styles.vr_img} onClick={this.handleOpenModal} src={url}/>
+	// 				</div>
+	// 				<ReactModal
+	// 				   isOpen={this.state.showModal}
+	// 				   onRequestClose={this.handleCloseModal}
+	// 				   className={styles.modal}
+	// 				   overlayClassName={styles.overlay}
+	// 				>
+	// 					<div style={{margin:'auto',width:'100%',height:'100%'}}>
+	// 						<a-scene embedded>
+	// 							<a-entity camera look-controls="reverseMouseDrag: true; hmdEnabled: false"></a-entity>
+	// 							<a-sky src={'/images/vrImage/'+this.props.data.vrImage.filename} />
+	// 						</a-scene>
+	// 					</div>
+	// 				</ReactModal>
+	// 			</div>
+	// 		)
+	// 	}
+	// 	else return null;
+	// }
+
 
 	_createClass(ProjectUnit, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			this.setState({ pinButton: _react2.default.createElement('a', { href: 'https://www.pinterest.com/pin/create/button/', 'data-pin-do': 'buttonBookmark' }) });
+		}
+	}, {
 		key: 'render',
-
-		// constructor() {
-		// 	super();
-		// 	this.state = {
-		//       showModal: false
-		//     };
-		//     this.handleOpenModal = this.handleOpenModal.bind(this);
-		//     this.handleCloseModal = this.handleCloseModal.bind(this);
-		// }
-		// handleOpenModal () {
-		//   this.setState({ showModal: true });
-		// }
-		//
-		// handleCloseModal () {
-		//   this.setState({ showModal: false });
-		// }
-		// _renderVrImage() {
-		// 	if (this.props.data.vrImage) {
-		// 		var url = (this.props.data.vrThumbnail)?cloudinaryModify(this.props.data.vrThumbnail.url,'w_512'):'/images/img_holder.jpg';
-		// 		return (
-		// 			<div>
-		// 				<div className={styles.vr_img_container}>
-		// 					<img className={styles.vr_img} onClick={this.handleOpenModal} src={url}/>
-		// 				</div>
-		// 				<ReactModal
-		// 				   isOpen={this.state.showModal}
-		// 				   onRequestClose={this.handleCloseModal}
-		// 				   className={styles.modal}
-		// 				   overlayClassName={styles.overlay}
-		// 				>
-		// 					<div style={{margin:'auto',width:'100%',height:'100%'}}>
-		// 						<a-scene embedded>
-		// 							<a-entity camera look-controls="reverseMouseDrag: true; hmdEnabled: false"></a-entity>
-		// 							<a-sky src={'/images/vrImage/'+this.props.data.vrImage.filename} />
-		// 						</a-scene>
-		// 					</div>
-		// 				</ReactModal>
-		// 			</div>
-		// 		)
-		// 	}
-		// 	else return null;
-		// }
 		value: function render() {
 			if (this.props.locale == "en") {
 				var description = this.props.data.giaiThichTiengAnh.split("\n").map(function (i) {
@@ -3922,7 +3924,7 @@ var ProjectUnit = exports.ProjectUnit = function (_React$Component2) {
 						{ className: _project_style2.default.title },
 						this.props.data.name
 					),
-					_react2.default.createElement('a', { href: 'https://www.pinterest.com/pin/create/button/', 'data-pin-do': 'buttonBookmark' }),
+					this.state.pinButton,
 					_react2.default.createElement(
 						'div',
 						{ className: _project_style2.default.description },
