@@ -14,6 +14,11 @@ export default (html) => `
         <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="e81030e5-5193-4e3f-b8fd-7f8ccf06e101";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117265550-1"></script>
+        <script
+            type="text/javascript"
+            async defer
+            src="https://assets.pinterest.com/js/pinit.js"
+        ></script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -26,11 +31,7 @@ export default (html) => `
     <body>
         <div id="app">${html}</div>
         <script src="/bundle/bundle.js"></script>
-        <script
-            type="text/javascript"
-            async defer
-            src="https://assets.pinterest.com/js/pinit.js"
-        ></script>
+
     </body>
     </html>
 `;
