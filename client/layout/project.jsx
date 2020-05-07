@@ -95,9 +95,9 @@ export default class ProjectPage extends React.Component {
 export class ProjectUnit extends React.Component {
 	constructor() {
 		super();
-		this.state = {
-	      pinButton: null
-	    };
+		// this.state = {
+	    //   pinButton: null
+	    // };
 	}
 	// handleOpenModal () {
 	//   this.setState({ showModal: true });
@@ -133,9 +133,21 @@ export class ProjectUnit extends React.Component {
 	// 	else return null;
 	// }
 	componentDidMount() {
-		this.setState({pinButton: <a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark">
-</a>})
+		if (!window.doBuild) {
+			this.preloadWidgetScript();
+		} else {
+			window.doBuild();
+		}
 	}
+
+	preloadWidgetScript () {
+		const script = document.createElement('script');
+		script.async = true;
+		script.dataset.pinBuild = 'doBuild';
+		script.src = 'https://assets.pinterest.com/js/pinit.js';
+		document.body.appendChild(script);
+	}
+
 	render() {
 		if (this.props.locale =="en") {
 			var description = this.props.data.giaiThichTiengAnh.split("\n").map(i => {
@@ -171,7 +183,7 @@ export class ProjectUnit extends React.Component {
 				</div>
 				<div className={styles.text_container}>
 					<h1 className={styles.title}>{this.props.data.name}</h1>
-					{this.state.pinButton}
+					<a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"></a>
 					<div className={styles.description}>{description}</div>
 				</div>
 				<div className={styles.grid_container}>

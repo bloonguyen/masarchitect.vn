@@ -28,6 +28,7 @@ build/Release
 
 # Dependency directories
 node_modules
+# node_modules/keystone/admin
 jspm_packages
 
 # Optional npm cache directory
@@ -42,3 +43,4 @@ config/loginConfig.js
 
 #DS_Store
 .DS_Store
+node_modules
