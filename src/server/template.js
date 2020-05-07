@@ -17,8 +17,8 @@ export default (html) => `
         <script
             type="text/javascript"
             async defer
-			src="https://assets.pinterest.com/js/pinit.js"
-			data-pin-build="doBuild"
+            src="https://assets.pinterest.com/js/pinit.js"
+            data-pin-build="doBuild"
         ></script>
         <script>
           window.dataLayer = window.dataLayer || [];
