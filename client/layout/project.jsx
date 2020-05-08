@@ -133,19 +133,9 @@ export class ProjectUnit extends React.Component {
 	// 	else return null;
 	// }
 	componentDidMount() {
-		if (!window.doBuild) {
-			this.preloadWidgetScript();
-		} else {
+		if(window.doBuild) {
 			window.doBuild();
 		}
-	}
-
-	preloadWidgetScript () {
-		const script = document.createElement('script');
-		script.async = true;
-		script.dataset.pinBuild = 'doBuild';
-		script.src = 'https://assets.pinterest.com/js/pinit.js';
-		document.body.appendChild(script);
 	}
 
 	render() {
