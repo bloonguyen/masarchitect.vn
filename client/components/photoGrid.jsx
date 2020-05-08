@@ -14,7 +14,8 @@ export default class PhotoGrid extends React.Component {
             isOpen: false
         };
 		this.openLightbox = this.openLightbox.bind(this);
-    }
+	}
+
 	openLightbox(index,event) {
 		console.log('index: ',index);
 		event.preventDefault();
@@ -41,6 +42,7 @@ export default class PhotoGrid extends React.Component {
 				<ReactPhotoGallery photos={photos} cols={this.props.cols} onClickPhoto={this.openLightbox}/>
 				{isOpen &&
                     <Lightbox
+						animationDuration={500}
                         mainSrc={images[photoIndex]}
                         nextSrc={images[(photoIndex + 1) % images.length]}
                         prevSrc={images[(photoIndex + images.length - 1) % images.length]}

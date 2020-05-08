@@ -101,7 +101,7 @@ module.exports = require("react-dom");
     module.exports._getContent = function() { return content; };
     module.exports._getCss = function() { return content.toString(); };
     module.exports._insertCss = function(options) { return insertCss(content, options) };
-    
+
     // Hot Module Replacement
     // https://webpack.github.io/docs/hot-module-replacement
     // Only activated in browser context
@@ -118,7 +118,7 @@ module.exports = require("react-dom");
       });
       module.hot.dispose(function() { removeCss(); });
     }
-  
+
 
 /***/ }),
 /* 4 */
@@ -1306,7 +1306,7 @@ var FooterBar = exports.FooterBar = function (_React$Component5) {
     module.exports._getContent = function() { return content; };
     module.exports._getCss = function() { return content.toString(); };
     module.exports._insertCss = function(options) { return insertCss(content, options) };
-    
+
     // Hot Module Replacement
     // https://webpack.github.io/docs/hot-module-replacement
     // Only activated in browser context
@@ -1323,7 +1323,7 @@ var FooterBar = exports.FooterBar = function (_React$Component5) {
       });
       module.hot.dispose(function() { removeCss(); });
     }
-  
+
 
 /***/ }),
 /* 9 */
@@ -1792,7 +1792,7 @@ exports.default = AvailablePost;
     module.exports._getContent = function() { return content; };
     module.exports._getCss = function() { return content.toString(); };
     module.exports._insertCss = function(options) { return insertCss(content, options) };
-    
+
     // Hot Module Replacement
     // https://webpack.github.io/docs/hot-module-replacement
     // Only activated in browser context
@@ -1809,7 +1809,7 @@ exports.default = AvailablePost;
       });
       module.hot.dispose(function() { removeCss(); });
     }
-  
+
 
 /***/ }),
 /* 15 */
@@ -1827,7 +1827,7 @@ exports.default = AvailablePost;
     module.exports._getContent = function() { return content; };
     module.exports._getCss = function() { return content.toString(); };
     module.exports._insertCss = function(options) { return insertCss(content, options) };
-    
+
     // Hot Module Replacement
     // https://webpack.github.io/docs/hot-module-replacement
     // Only activated in browser context
@@ -1844,7 +1844,7 @@ exports.default = AvailablePost;
       });
       module.hot.dispose(function() { removeCss(); });
     }
-  
+
 
 /***/ }),
 /* 16 */
@@ -1862,7 +1862,7 @@ exports.default = AvailablePost;
     module.exports._getContent = function() { return content; };
     module.exports._getCss = function() { return content.toString(); };
     module.exports._insertCss = function(options) { return insertCss(content, options) };
-    
+
     // Hot Module Replacement
     // https://webpack.github.io/docs/hot-module-replacement
     // Only activated in browser context
@@ -1879,7 +1879,7 @@ exports.default = AvailablePost;
       });
       module.hot.dispose(function() { removeCss(); });
     }
-  
+
 
 /***/ }),
 /* 17 */
@@ -1897,7 +1897,7 @@ exports.default = AvailablePost;
     module.exports._getContent = function() { return content; };
     module.exports._getCss = function() { return content.toString(); };
     module.exports._insertCss = function(options) { return insertCss(content, options) };
-    
+
     // Hot Module Replacement
     // https://webpack.github.io/docs/hot-module-replacement
     // Only activated in browser context
@@ -1914,7 +1914,7 @@ exports.default = AvailablePost;
       });
       module.hot.dispose(function() { removeCss(); });
     }
-  
+
 
 /***/ }),
 /* 18 */
@@ -1932,7 +1932,7 @@ exports.default = AvailablePost;
     module.exports._getContent = function() { return content; };
     module.exports._getCss = function() { return content.toString(); };
     module.exports._insertCss = function(options) { return insertCss(content, options) };
-    
+
     // Hot Module Replacement
     // https://webpack.github.io/docs/hot-module-replacement
     // Only activated in browser context
@@ -1949,7 +1949,7 @@ exports.default = AvailablePost;
       });
       module.hot.dispose(function() { removeCss(); });
     }
-  
+
 
 /***/ }),
 /* 19 */
@@ -2041,7 +2041,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (html) {
-    return "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>MAS Architecture</title>\n        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>\n        <meta name='description' content='MAS Architecture design civil & industrial architectural projects such as houses, villas, restaurant, hotel, bar, coffee, office ... With the slogan \"Creativity - Experiences - Enthusiasm\", MAS Architecture will bring you an active and comfortable living space.'/>\n        <meta name='author' content='M.SPACE Co.,ltd'/>\n        <meta property=\"og:image\" content=\"/images/cover.jpg\">\n        <link href='/css/bootstrap.min.css' rel='stylesheet'>\n        <link href='/css/stylesheet.css' rel='stylesheet'>\n        <link href='/bundle/styles.css' rel='stylesheet'>\n        <link rel=\"icon\" type=\"image/png\" href=\"/images/logo/favicon.png\">\n        <script type=\"text/javascript\">window.$crisp=[];window.CRISP_WEBSITE_ID=\"e81030e5-5193-4e3f-b8fd-7f8ccf06e101\";(function(){d=document;s=d.createElement(\"script\");s.src=\"https://client.crisp.chat/l.js\";s.async=1;d.getElementsByTagName(\"head\")[0].appendChild(s);})();</script>\n        <!-- Global site tag (gtag.js) - Google Analytics -->\n        <script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-117265550-1\"></script>\n        <script\n            type=\"text/javascript\"\n            async defer\n            src=\"https://assets.pinterest.com/js/pinit.js\"\n        ></script>\n        <script>\n          window.dataLayer = window.dataLayer || [];\n          function gtag(){dataLayer.push(arguments);}\n          gtag('js', new Date());\n\n          gtag('config', 'UA-117265550-1');\n        </script>\n        <meta charset=\"utf-8\">\n    </head>\n    <body>\n        <div id=\"app\">" + html + "</div>\n        <script src=\"/bundle/bundle.js\"></script>\n\n    </body>\n    </html>\n";
+    return "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>MAS Architecture</title>\n        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>\n        <meta name='description' content='MAS Architecture design civil & industrial architectural projects such as houses, villas, restaurant, hotel, bar, coffee, office ... With the slogan \"Creativity - Experiences - Enthusiasm\", MAS Architecture will bring you an active and comfortable living space.'/>\n        <meta name='author' content='M.SPACE Co.,ltd'/>\n        <meta property=\"og:image\" content=\"/images/cover.jpg\">\n        <link href='/css/bootstrap.min.css' rel='stylesheet'>\n        <link href='/css/stylesheet.css' rel='stylesheet'>\n        <link href='/bundle/styles.css' rel='stylesheet'>\n        <link rel=\"icon\" type=\"image/png\" href=\"/images/logo/favicon.png\">\n        <script type=\"text/javascript\">window.$crisp=[];window.CRISP_WEBSITE_ID=\"e81030e5-5193-4e3f-b8fd-7f8ccf06e101\";(function(){d=document;s=d.createElement(\"script\");s.src=\"https://client.crisp.chat/l.js\";s.async=1;d.getElementsByTagName(\"head\")[0].appendChild(s);})();</script>\n        <!-- Global site tag (gtag.js) - Google Analytics -->\n        <script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-117265550-1\"></script>\n     <script>\n          window.dataLayer = window.dataLayer || [];\n          function gtag(){dataLayer.push(arguments);}\n          gtag('js', new Date());\n\n          gtag('config', 'UA-117265550-1');\n        </script>\n        <meta charset=\"utf-8\">\n    </head>\n    <body>\n        <div id=\"app\">" + html + "</div>\n        <script src=\"/bundle/bundle.js\"></script>\n\n    </body>\n    </html>\n";
 };
 
 /***/ }),
@@ -3872,7 +3872,6 @@ var ProjectUnit = exports.ProjectUnit = function (_React$Component2) {
 	_createClass(ProjectUnit, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			this.setState({ pinButton: _react2.default.createElement('a', { href: 'https://www.pinterest.com/pin/create/button/', 'data-pin-do': 'buttonBookmark' }) });
 		}
 	}, {
 		key: 'render',
@@ -4723,7 +4722,7 @@ exports.locals = {
     module.exports._getContent = function() { return content; };
     module.exports._getCss = function() { return content.toString(); };
     module.exports._insertCss = function(options) { return insertCss(content, options) };
-    
+
     // Hot Module Replacement
     // https://webpack.github.io/docs/hot-module-replacement
     // Only activated in browser context
@@ -4740,7 +4739,7 @@ exports.locals = {
       });
       module.hot.dispose(function() { removeCss(); });
     }
-  
+
 
 /***/ }),
 /* 47 */
@@ -4758,7 +4757,7 @@ exports.locals = {
     module.exports._getContent = function() { return content; };
     module.exports._getCss = function() { return content.toString(); };
     module.exports._insertCss = function(options) { return insertCss(content, options) };
-    
+
     // Hot Module Replacement
     // https://webpack.github.io/docs/hot-module-replacement
     // Only activated in browser context
@@ -4775,7 +4774,7 @@ exports.locals = {
       });
       module.hot.dispose(function() { removeCss(); });
     }
-  
+
 
 /***/ }),
 /* 48 */
