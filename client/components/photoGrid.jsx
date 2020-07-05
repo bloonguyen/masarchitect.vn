@@ -51,7 +51,7 @@ export default class PhotoGrid extends React.Component {
                         })}
                         onMoveNextRequest={() => this.setState({
                             photoIndex: (photoIndex + 1) % images.length,
-                        })}
+						})}
 					/>
 				}
 			</div>

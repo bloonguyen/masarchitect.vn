@@ -58,8 +58,8 @@ export default class ContactPage extends React.Component{
                         <h1>M.SPACE Co.,ltd</h1>
     					<h1>MAS Architecture Workshop</h1>
     					<h2>{this.state.lang.address}</h2>
-    					<div>T (+84) 0 236 3 863 885</div>
-    					<div>F (+84) 0 236 3 863 885</div>
+    					<div>T (+84) 0 236 7 300 799</div>
+    					<div>F (+84) 0 236 7 300 799</div>
     					<div>M (+84) 0 905 007 550</div>
     					<div>E vanphongkientrucmas@gmail.com</div>
     				</div>

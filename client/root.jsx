@@ -22,6 +22,15 @@ class App extends React.Component {
         console.log('lang params: ',locale);
         this.setState({locale:locale});
     }
+    componentDidMount() {
+		const script = document.createElement('script');
+		script.async = true;
+        script.dataset.pinBuild = 'doBuild';
+        script.dataset.pinHover = true;
+        script.dataset.pinTall = true;
+        script.src = '//assets.pinterest.com/js/pinit.js';
+		document.body.appendChild(script);
+	}
     render() {
         return (
             <Router history={browserHistory}>
