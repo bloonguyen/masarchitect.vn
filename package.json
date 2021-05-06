@@ -17,7 +17,7 @@
     "request": "^2.60.0",
     "require-from-string": "^2.0.1",
     "store-prototype": "^1.1.1",
-    "underscore": "^1.8.3"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
