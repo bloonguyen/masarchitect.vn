@@ -6,7 +6,7 @@
     "babel-plugin-object-assign": "^1.2.1",
     "browserify-middleware": "^7.0.0",
     "ejs": "^2.5.7",
-    "express": "^4.16.1",
+    "express": "^4.17.3",
     "keystone": "^4.0.0-beta.5",
     "memory-fs": "^0.4.1",
     "model-transform": "^1.1.0",
