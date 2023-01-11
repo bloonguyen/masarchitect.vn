@@ -4,10 +4,10 @@
   "private": true,
   "dependencies": {
     "babel-plugin-object-assign": "^1.2.1",
-    "browserify-middleware": "^7.0.0",
+    "browserify-middleware": "^8.1.1",
     "ejs": "^2.5.7",
     "express": "^4.16.1",
-    "keystone": "^4.0.0-beta.5",
+    "keystone": "^4.2.1",
     "memory-fs": "^0.4.1",
     "model-transform": "^1.1.0",
     "node-gyp": "^7.0.0",
